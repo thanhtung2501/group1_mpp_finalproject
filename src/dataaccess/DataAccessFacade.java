@@ -1,8 +1,5 @@
 package dataaccess;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,14 +17,8 @@ public class DataAccessFacade implements DataAccess {
 	enum StorageType {
 		BOOKS, MEMBERS, USERS;
 	}
-	// Windows user can use
-	
-	/*public static final String OUTPUT_DIR = System.getProperty("user.dir") 
-			+ "\\src\\dataaccess\\storage";*/
-	
-	// For Mac Users path can use / 
-	public static final String OUTPUT_DIR = System.getProperty("user.dir") 
-			+ "/src/dataaccess/storage";
+	public static final String OUTPUT_DIR = System.getProperty("user.dir")
+			+ File.separator + "src" + File.separator + "dataaccess" + File.separator + "storage";
 	
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 	
@@ -53,7 +44,6 @@ public class DataAccessFacade implements DataAccess {
 		return (HashMap<String, LibraryMember>) readFromStorage(
 				StorageType.MEMBERS);
 	}
-	
 	
 	@SuppressWarnings("unchecked")
 	public HashMap<String, User> readUserMap() {
@@ -119,8 +109,6 @@ public class DataAccessFacade implements DataAccess {
 		}
 		return retVal;
 	}
-	
-	
 	
 	final static class Pair<S,T> implements Serializable{
 		

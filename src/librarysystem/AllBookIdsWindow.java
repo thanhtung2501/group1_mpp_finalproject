@@ -5,16 +5,14 @@ import java.awt.FlowLayout;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Collections;
-import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import business.ControllerInterface;
-import business.SystemController;
+import business.controller.ControllerInterface;
+import business.controller.SystemController;
 
 
 public class AllBookIdsWindow extends JFrame implements LibWindow {

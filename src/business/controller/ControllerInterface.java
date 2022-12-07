@@ -1,4 +1,6 @@
-package business;
+package business.controller;
+
+import business.exception.LoginException;
 
 import java.util.List;
 

@@ -3,15 +3,14 @@ package librarysystem;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.TextArea;
-import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import business.ControllerInterface;
-import business.SystemController;
+import business.controller.ControllerInterface;
+import business.controller.SystemController;
 
 
 public class AllMemberIdsWindow extends JFrame implements LibWindow {

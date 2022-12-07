@@ -1,7 +1,5 @@
 package business.model;
 
-import business.Role;
-
 import java.io.Serializable;
 
 final public class User implements Serializable {
@@ -12,7 +10,7 @@ final public class User implements Serializable {
 	
 	private String password;
 	private Role role;
-	User(String id, String pass, Role role) {
+	public User(String id, String pass, Role role) {
 		this.id = id;
 		this.password = pass;
 		this.role = role;

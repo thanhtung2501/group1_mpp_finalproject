@@ -15,8 +15,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import business.ControllerInterface;
-import business.SystemController;
+import business.controller.ControllerInterface;
+import business.controller.SystemController;
 
 
 public class LibrarySystem extends JFrame implements LibWindow {

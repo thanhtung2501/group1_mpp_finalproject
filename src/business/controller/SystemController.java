@@ -1,9 +1,11 @@
-package business;
+package business.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import business.model.Role;
+import business.exception.LoginException;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 import business.model.User;

@@ -14,5 +14,17 @@ final public class Author extends Person implements Serializable {
 		this.bio = bio;
 	}
 
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
+
+	public boolean isCredential() {
+		return credential;
+	}
+
+	public void setCredential(boolean credential) {
+		this.credential = credential;
+	}
+
 	private static final long serialVersionUID = 7508481940058530471L;
 }

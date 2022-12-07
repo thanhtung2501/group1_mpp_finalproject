@@ -464,7 +464,7 @@
 									"font": "Arial;13;0",
 									"left": 389.5,
 									"top": 20.5,
-									"width": 103.89453125,
+									"width": 103,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6F6Le9cRwmk="
@@ -663,7 +663,7 @@
 									"font": "Arial;13;0",
 									"left": 404.5,
 									"top": 468.5,
-									"width": 98.8291015625,
+									"width": 98,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6F8D/tc/pCQ="
@@ -1061,7 +1061,7 @@
 									"font": "Arial;13;0",
 									"left": 395.5,
 									"top": 892.5,
-									"width": 132.09716796875,
+									"width": 131,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6F/K19ecB0o="
@@ -3566,7 +3566,7 @@
 									"font": "Arial;13;0",
 									"left": 389,
 									"top": 124.5,
-									"width": 100.29541015625,
+									"width": 99,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6GmMDjPptNg="
@@ -4032,7 +4032,7 @@
 									"font": "Arial;13;0",
 									"left": 381.5,
 									"top": 220.5,
-									"width": 103.20263671875,
+									"width": 102,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6Xb0CbF7WTM="
@@ -15285,9 +15285,9 @@
 														"$ref": "AAAAAAGE7aQ9I2P8PQE="
 													},
 													"font": "Arial;13;0",
-													"left": 128.72998046875,
+													"left": 126.55908203125,
 													"top": 5,
-													"width": 156.3525390625,
+													"width": 144.71728515625,
 													"height": 13,
 													"text": "LibSystem_CheckOutBook"
 												},
@@ -15300,7 +15300,7 @@
 													"font": "Arial;13;1",
 													"left": 109,
 													"top": 5,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -15438,7 +15438,7 @@
 													"top": 47,
 													"width": 62.736328125,
 													"height": 13,
-													"text": "User"
+													"text": "Actor"
 												},
 												{
 													"_type": "LabelView",
@@ -17974,7 +17974,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGE7X3FE89ucJE="
 							},
-							"name": "User",
+							"name": "Actor",
 							"represent": {
 								"$ref": "AAAAAAGE7X3FFM//PGQ="
 							},
@@ -18062,8 +18062,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGE7X3FE89tulc="
 					},
-					"name": "Role1",
-					"type": ""
+					"name": "Role1"
 				},
 				{
 					"_type": "UMLAttribute",

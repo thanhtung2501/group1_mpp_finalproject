@@ -12,4 +12,5 @@ public class Constant {
     public static final String SUCCESS_ADD_MEMBER = "Member %s is added success!";
     public static final String SUCCESS_DELETE_MEMBER = "Member %s is deleted success!";
     public static final String FAIL_ADD_MEMBER_BLANK = "%s field must be non empty!";
+    public static final String WELCOME = "Welcome %s to the MPP Library!";
 }

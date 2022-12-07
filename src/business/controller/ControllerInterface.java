@@ -4,11 +4,12 @@ import business.exception.LoginException;
 import business.model.Author;
 import business.model.Book;
 import business.model.LibraryMember;
+import business.model.Role;
 
 import java.util.List;
 
 public interface ControllerInterface {
-	void login(String id, String password) throws LoginException;
+	Role login(String id, String password) throws LoginException;
 	List<String> allMemberIds();
 	List<String> allBookIds();
 

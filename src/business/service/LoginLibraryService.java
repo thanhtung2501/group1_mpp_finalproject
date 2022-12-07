@@ -7,7 +7,7 @@ import business.util.Constant;
 
 import java.util.Map;
 
-public class LoginService extends AbstractService {
+public class LoginLibraryService extends AbstractLibraryService {
     public Role login(String username, String password) throws LoginException {
         Map<String, User> map = dataAccess.readUserMap();
         if(!map.containsKey(username)) {

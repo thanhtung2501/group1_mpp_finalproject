@@ -3,17 +3,16 @@ package business.service;
 
 import business.model.Author;
 import business.model.Book;
-import business.model.CheckoutRecord;
 import business.model.LibraryMember;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 
 import java.util.List;
 
-public class AbstractService implements Service {
+public class AbstractLibraryService implements LibraryService {
     protected DataAccess dataAccess = new DataAccessFacade();
 
-    protected BookService bookService = new BookService();
+    protected BookLibraryService bookService = new BookLibraryService();
 
     @Override
     public LibraryMember checkoutBook(String libraryMemberID, String isbn) {

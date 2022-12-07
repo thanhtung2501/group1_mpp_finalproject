@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * This is a main service for Library system which responsible for all main behaviour of Library System
  */
-public interface Service {
+public interface LibraryService {
     default Boolean validateRole(Role role) {
         return false;
     }

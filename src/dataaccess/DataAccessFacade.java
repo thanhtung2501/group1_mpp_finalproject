@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import business.model.Book;
 import business.model.LibraryMember;
@@ -28,7 +29,14 @@ public class DataAccessFacade implements DataAccess {
 		mems.put(memberId, member);
 		saveToStorage(StorageType.MEMBERS, mems);	
 	}
-	
+
+	@Override
+	public void deleteMember(String memberId) {
+		Map<String, LibraryMember> mems = readMemberMap();
+		mems.remove(memberId);
+		saveToStorage(StorageType.MEMBERS, mems);
+	}
+
 	@SuppressWarnings("unchecked")
 	public  HashMap<String,Book> readBooksMap() {
 		//Returns a Map with name/value pairs being

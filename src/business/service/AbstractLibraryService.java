@@ -12,7 +12,7 @@ import java.util.List;
 public class AbstractLibraryService implements LibraryService {
     protected DataAccess dataAccess = new DataAccessFacade();
 
-    protected BookLibraryService bookService = new BookLibraryService();
+    protected BookService bookService = new BookService();
 
     @Override
     public LibraryMember checkoutBook(String libraryMemberID, String isbn) {

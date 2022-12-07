@@ -13,7 +13,7 @@ import java.util.Optional;
 import static business.util.CommonUtil.isValidIsbn;
 
 
-public class BookLibraryService extends AbstractLibraryService {
+public class BookService extends AbstractLibraryService {
     private Map<String, Book> bookMap;
     public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) throws AddBookException {
         // Validate parameters

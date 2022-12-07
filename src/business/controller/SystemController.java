@@ -7,14 +7,14 @@ import java.util.List;
 import business.model.*;
 import business.exception.LoginException;
 import business.service.LibraryService;
-import business.service.impl.LibraryLibraryServiceImpl;
+import business.service.impl.LibraryServiceImpl;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 
 public class SystemController implements ControllerInterface {
     public static Role currentRole = null;
 
-    private LibraryService libraryService = new LibraryLibraryServiceImpl();
+    private LibraryService libraryService = new LibraryServiceImpl();
 
     public void login(String id, String password) throws LoginException {
         DataAccess da = new DataAccessFacade();

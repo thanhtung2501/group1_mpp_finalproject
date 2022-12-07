@@ -37,4 +37,17 @@ public interface LibraryService {
      * @return
      */
     Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors);
+
+    /***
+     * Add new member or update existing library member.
+     * @param libraryMember
+     */
+    void addUpdateNewLibraryMember(LibraryMember libraryMember);
+
+    /**
+     * Add a copy of an existing book to the library collection.
+     * @param isbn
+     * @return {@link Book}
+     */
+    Book addBookCopy(String isbn);
 }

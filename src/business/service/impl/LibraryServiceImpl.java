@@ -2,6 +2,6 @@ package business.service.impl;
 
 import business.service.AbstractLibraryService;
 
-public class LibraryLibraryServiceImpl extends AbstractLibraryService {
+public class LibraryServiceImpl extends AbstractLibraryService {
 
 }

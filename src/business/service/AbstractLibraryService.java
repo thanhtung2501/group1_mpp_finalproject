@@ -12,7 +12,9 @@ import java.util.List;
 public class AbstractLibraryService implements LibraryService {
     protected DataAccess dataAccess = new DataAccessFacade();
 
-    protected BookLibraryService bookService = new BookLibraryService();
+    protected BookService bookService = new BookService();
+
+    protected LibraryMemberService libraryMemberService = new LibraryMemberService();
 
     @Override
     public LibraryMember checkoutBook(String libraryMemberID, String isbn) {
@@ -27,5 +29,15 @@ public class AbstractLibraryService implements LibraryService {
     @Override
     public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) {
         return bookService.addBook(isbn, title, maxCheckoutLength, authors);
+    }
+
+    @Override
+    public void addUpdateNewLibraryMember(LibraryMember libraryMember) {
+        libraryMemberService.addUpdateNewLibraryMember(libraryMember);
+    }
+
+    @Override
+    public Book addBookCopy(String isbn) {
+        return bookService.addBookCopy(isbn);
     }
 };

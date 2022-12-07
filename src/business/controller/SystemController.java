@@ -6,15 +6,15 @@ import java.util.List;
 
 import business.model.*;
 import business.exception.LoginException;
-import business.service.Service;
-import business.service.impl.LibraryServiceImpl;
+import business.service.LibraryService;
+import business.service.impl.LibraryLibraryServiceImpl;
 import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 
 public class SystemController implements ControllerInterface {
     public static Role currentRole = null;
 
-    private Service service = new LibraryServiceImpl();
+    private LibraryService libraryService = new LibraryLibraryServiceImpl();
 
     public void login(String id, String password) throws LoginException {
         DataAccess da = new DataAccessFacade();
@@ -48,16 +48,16 @@ public class SystemController implements ControllerInterface {
 
     @Override
     public LibraryMember checkoutBook(String libraryMemberID, String isbn) {
-        return service.checkoutBook(libraryMemberID, isbn);
+        return libraryService.checkoutBook(libraryMemberID, isbn);
     }
 
     @Override
     public LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn) {
-        return service.checkoutBooks(libraryMemberID, listIsbn);
+        return libraryService.checkoutBooks(libraryMemberID, listIsbn);
     }
 
     @Override
     public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) {
-        return service.addBook(isbn, title, maxCheckoutLength, authors);
+        return libraryService.addBook(isbn, title, maxCheckoutLength, authors);
     }
 }

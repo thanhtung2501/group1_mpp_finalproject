@@ -4,7 +4,7 @@ import business.model.LibraryMember;
 
 import java.util.Map;
 
-public class LibraryMemberService extends AbstractService {
+public class LibraryMemberLibraryService extends AbstractLibraryService {
 
     public Map<String, LibraryMember> findAllLibraryMembers() {
         return dataAccess.readMemberMap();

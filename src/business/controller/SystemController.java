@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import business.model.CheckoutRecord;
 import business.model.Role;
 import business.exception.LoginException;
 import dataaccess.DataAccess;
@@ -41,6 +42,16 @@ public class SystemController implements ControllerInterface {
 		retval.addAll(da.readBooksMap().keySet());
 		return retval;
 	}
-	
-	
+
+	@Override
+	public CheckoutRecord checkoutBook(String libraryMemberID, String isbn) {
+		//TODO
+		return null;
+	}
+
+	@Override
+	public CheckoutRecord checkoutBook(String libraryMemberID, List<String> listIsbn) {
+		//TODO
+		return null;
+	}
 }

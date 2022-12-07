@@ -1,7 +1,9 @@
 package business.controller;
 
 import business.exception.LoginException;
-import business.model.CheckoutRecord;
+import business.model.Author;
+import business.model.Book;
+import business.model.LibraryMember;
 
 import java.util.List;
 
@@ -14,16 +16,18 @@ public interface ControllerInterface {
 	 * Checkout book and return a checkout record which already checked out.
 	 * @param libraryMemberID
 	 * @param {@link String}
-	 * @return {@link CheckoutRecord} a checkout record
+	 * @return {@link LibraryMember} a checkout record
 	 */
-	CheckoutRecord checkoutBook(String libraryMemberID, String isbn);
+	LibraryMember checkoutBook(String libraryMemberID, String isbn);
 
 	/***
 	 * Checkout book and return a checkout record which already checked out.
 	 * @param libraryMemberID
 	 * @param listIsbn {@link List}
-	 * @return {@CheckoutRecord} a checkout record
+	 * @return {@LibraryMember} a checkout record
 	 */
-	CheckoutRecord checkoutBook(String libraryMemberID, List<String> listIsbn);
+	LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn);
+
+	Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors);
 	
 }

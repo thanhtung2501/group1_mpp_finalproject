@@ -1,8 +1,6 @@
 package business.service;
 
-import business.model.CheckoutRecord;
-import business.model.LibraryMember;
-import business.model.Role;
+import business.model.*;
 
 import java.util.List;
 
@@ -29,4 +27,14 @@ public interface Service {
      * @return {@CheckoutRecord} a checkout record
      */
     LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn);
+
+    /***
+     * Add book to library System
+     * @param isbn
+     * @param title
+     * @param maxCheckoutLength
+     * @param authors
+     * @return
+     */
+    Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors);
 }

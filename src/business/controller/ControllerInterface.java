@@ -1,6 +1,8 @@
 package business.controller;
 
 import business.exception.LoginException;
+import business.model.Author;
+import business.model.Book;
 import business.model.LibraryMember;
 
 import java.util.List;
@@ -25,5 +27,7 @@ public interface ControllerInterface {
 	 * @return {@LibraryMember} a checkout record
 	 */
 	LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn);
+
+	Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors);
 	
 }

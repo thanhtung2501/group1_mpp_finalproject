@@ -69,6 +69,10 @@ public class BookService extends AbstractService {
         dataAccess.saveBooksMap(books);
     }
 
+    public LibraryMember checkout(String libraryMemberID, List<String> isbn) throws CheckoutBookException {
+        //TODO
+        return null;
+    }
     public LibraryMember checkout(String libraryMemberID, String isbn) throws CheckoutBookException {
         Map<String, LibraryMember> libraryMemberMap = dataAccess.readMemberMap();
         LibraryMember libraryMember = Optional.ofNullable(libraryMemberMap.get(libraryMemberID))

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import business.model.CheckoutRecord;
+import business.model.LibraryMember;
 import business.model.Role;
 import business.exception.LoginException;
 import dataaccess.DataAccess;
@@ -44,13 +45,13 @@ public class SystemController implements ControllerInterface {
 	}
 
 	@Override
-	public CheckoutRecord checkoutBook(String libraryMemberID, String isbn) {
+	public LibraryMember checkoutBook(String libraryMemberID, String isbn) {
 		//TODO
 		return null;
 	}
 
 	@Override
-	public CheckoutRecord checkoutBook(String libraryMemberID, List<String> listIsbn) {
+	public LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn) {
 		//TODO
 		return null;
 	}

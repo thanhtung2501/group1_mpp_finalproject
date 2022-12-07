@@ -1,16 +1,15 @@
-package business;
+package business.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 
-import dataaccess.DataAccess;
-import dataaccess.DataAccessFacade;
+import business.model.Address;
+import business.model.Person;
 
 final public class LibraryMember extends Person implements Serializable {
 	private String memberId;
 	
-	public LibraryMember(String memberId, String fname, String lname, String tel,Address add) {
+	public LibraryMember(String memberId, String fname, String lname, String tel, Address add) {
 		super(fname,lname, tel, add);
 		this.memberId = memberId;		
 	}

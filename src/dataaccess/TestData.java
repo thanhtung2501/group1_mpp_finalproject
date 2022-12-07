@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import business.Address;
-import business.Author;
-import business.Book;
-import business.LibraryMember;
+import business.Role;
+import business.model.*;
 
 /**
  * This class loads data into the data repository and also
@@ -102,9 +100,9 @@ public class TestData {
 	@SuppressWarnings("serial")
 	List<User> allUsers = new ArrayList<User>() {
 		{
-			add(new User("101", "xyz", Auth.LIBRARIAN));
-			add(new User("102", "abc", Auth.ADMIN));
-			add(new User("103", "111", Auth.BOTH));
+			add(new User("101", "xyz", Role.LIBRARIAN));
+			add(new User("102", "abc", Role.ADMIN));
+			add(new User("103", "111", Role.BOTH));
 		}
 	};
 }

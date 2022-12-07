@@ -1,4 +1,6 @@
-package dataaccess;
+package business.model;
+
+import business.Role;
 
 import java.io.Serializable;
 
@@ -9,11 +11,11 @@ final public class User implements Serializable {
 	private String id;
 	
 	private String password;
-	private Auth authorization;
-	User(String id, String pass, Auth  auth) {
+	private Role role;
+	User(String id, String pass, Role role) {
 		this.id = id;
 		this.password = pass;
-		this.authorization = auth;
+		this.role = role;
 	}
 	
 	public String getId() {
@@ -22,12 +24,12 @@ final public class User implements Serializable {
 	public String getPassword() {
 		return password;
 	}
-	public Auth getAuthorization() {
-		return authorization;
+	public Role getRole() {
+		return role;
 	}
 	@Override
 	public String toString() {
-		return "[" + id + ":" + password + ", " + authorization.toString() + "]";
+		return "[" + id + ":" + password + ", " + role.toString() + "]";
 	}
 	
 }

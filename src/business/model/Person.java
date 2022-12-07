@@ -1,4 +1,6 @@
-package business;
+package business.model;
+
+import business.model.Address;
 
 import java.io.Serializable;
 

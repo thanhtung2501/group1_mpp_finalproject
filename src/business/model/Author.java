@@ -1,9 +1,10 @@
-package business;
+package business.model;
 
 import java.io.Serializable;
 
 final public class Author extends Person implements Serializable {
 	private String bio;
+	private boolean credential;
 	public String getBio() {
 		return bio;
 	}

@@ -6,10 +6,9 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 
-import business.Book;
-import business.BookCopy;
-import business.LibraryMember;
-import dataaccess.DataAccessFacade.StorageType;
+import business.model.Book;
+import business.model.LibraryMember;
+import business.model.User;
 
 
 public class DataAccessFacade implements DataAccess {

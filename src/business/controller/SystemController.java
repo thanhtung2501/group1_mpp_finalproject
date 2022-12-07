@@ -60,4 +60,14 @@ public class SystemController implements ControllerInterface {
     public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) {
         return libraryService.addBook(isbn, title, maxCheckoutLength, authors);
     }
+
+    @Override
+    public void addUpdateNewLibraryMember(LibraryMember libraryMember) {
+        libraryService.addUpdateNewLibraryMember(libraryMember);
+    }
+
+    @Override
+    public Book addBookCopy(String isbn) {
+        return libraryService.addBookCopy(isbn);
+    }
 }

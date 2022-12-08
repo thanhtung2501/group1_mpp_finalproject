@@ -27,7 +27,7 @@ public class LoginWindow implements ActionListener, KeyListener, DocumentListene
         tfPassword.addKeyListener(this);
         tfUserName.addKeyListener(this);
         loginButton.addActionListener(e ->
-                libAppWindow.authenUser(tfUserName.getText().trim(), tfPassword.getPassword())
+                libAppWindow.validateUser(tfUserName.getText().trim(), String.valueOf(tfPassword.getPassword()))
         );
     }
 
@@ -50,7 +50,7 @@ public class LoginWindow implements ActionListener, KeyListener, DocumentListene
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            libAppWindow.authenUser(tfUserName.getText().trim(), tfPassword.getPassword());
+            libAppWindow.validateUser(tfUserName.getText().trim(), String.valueOf(tfPassword.getPassword()));
         }
     }
 

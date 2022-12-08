@@ -25,6 +25,7 @@ public class TestData {
 		td.bookData();
 		td.libraryMemberData();
 		td.userData();
+		td.authorData();
 		DataAccess da = new DataAccessFacade();
 		System.out.println(da.readBooksMap());
 		System.out.println(da.readUserMap());
@@ -42,6 +43,10 @@ public class TestData {
 	
 	public void userData() {
 		DataAccessFacade.loadUserMap(allUsers);
+	}
+
+	public void authorData() {
+		DataAccessFacade.loadAuthorList(allAuthors);
 	}
 	
 	//create library members
@@ -100,9 +105,9 @@ public class TestData {
 	@SuppressWarnings("serial")
 	List<User> allUsers = new ArrayList<User>() {
 		{
-			add(new User("101", "xyz".toCharArray(), Role.LIBRARIAN));
-			add(new User("102", "abc".toCharArray(), Role.ADMIN));
-			add(new User("103", "111".toCharArray(), Role.BOTH));
+			add(new User("101", "xyz", Role.LIBRARIAN));
+			add(new User("102", "abc", Role.ADMIN));
+			add(new User("103", "111", Role.BOTH));
 		}
 	};
 }

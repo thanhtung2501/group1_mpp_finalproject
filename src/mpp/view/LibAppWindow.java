@@ -215,8 +215,8 @@ public class LibAppWindow extends JFrame {
         // TODO: place custom component creation code here
     }
 
-    public void authenUser(String username, char[] password) {
-        if (username.length() > 0 && password.length > 0) {
+    public void validateUser(String username, String password) {
+        if (username.length() > 0 && password.length() > 0) {
             try {
                 this.role = systemController.login(username, password);
                 currentUser = username;

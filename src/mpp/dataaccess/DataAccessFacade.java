@@ -3,6 +3,7 @@ import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -74,8 +75,7 @@ public class DataAccessFacade implements DataAccess {
 	public List<Author> readAuthorList(){
 		return (List<Author>) readFromStorage(StorageType.AUTHORS);
 	}
-	
-	
+
 	/////load methods - these place test data into the storage area
 	///// - used just once at startup  
 	
@@ -89,6 +89,11 @@ public class DataAccessFacade implements DataAccess {
 		HashMap<String, User> users = new HashMap<String, User>();
 		userList.forEach(user -> users.put(user.getId(), user));
 		saveToStorage(StorageType.USERS, users);
+	}
+
+	static void loadAuthorList(List<Author> authorList) {
+		List<Author> authors = new ArrayList<>(authorList);
+		saveToStorage(StorageType.AUTHORS, authors);
 	}
  
 	static void loadMemberMap(List<LibraryMember> memberList) {

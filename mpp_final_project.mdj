@@ -464,7 +464,7 @@
 									"font": "Arial;13;0",
 									"left": 389.5,
 									"top": 20.5,
-									"width": 103,
+									"width": 103.89453125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6F6Le9cRwmk="
@@ -663,7 +663,7 @@
 									"font": "Arial;13;0",
 									"left": 404.5,
 									"top": 468.5,
-									"width": 98,
+									"width": 98.8291015625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6F8D/tc/pCQ="
@@ -1061,7 +1061,7 @@
 									"font": "Arial;13;0",
 									"left": 395.5,
 									"top": 892.5,
-									"width": 131,
+									"width": 132.09716796875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6F/K19ecB0o="
@@ -3566,7 +3566,7 @@
 									"font": "Arial;13;0",
 									"left": 389,
 									"top": 124.5,
-									"width": 99,
+									"width": 100.29541015625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6GmMDjPptNg="
@@ -4032,7 +4032,7 @@
 									"font": "Arial;13;0",
 									"left": 381.5,
 									"top": 220.5,
-									"width": 102,
+									"width": 103.20263671875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGE6Xb0CbF7WTM="
@@ -15994,7 +15994,7 @@
 												"$ref": "AAAAAAGE7X3FE8+SS6c="
 											},
 											"edgePosition": 1,
-											"text": "3 : submitBookInfo(ISBN, title, authors, maxCheckoutLength, numberOfCopies)"
+											"text": "3 : submitBookInfo(ISBN, title, authors, maxCheckoutLength)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -16105,7 +16105,7 @@
 												"$ref": "AAAAAAGE7X3FE8+XkfI="
 											},
 											"edgePosition": 1,
-											"text": "4 : addBook(ISBN, title, authors, maxCheckoutLength, numberOfCopies)"
+											"text": "4 : addBook(ISBN, title, authors, maxCheckoutLength)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -16332,7 +16332,7 @@
 												"$ref": "AAAAAAGE7X3FE8+jkx8="
 											},
 											"edgePosition": 1,
-											"text": "5 : addBook(ISBN, title, authors, maxCheckoutLength, numberOfCopies)"
+											"text": "5 : addBook(ISBN, title, authors, maxCheckoutLength)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -16556,7 +16556,7 @@
 												"$ref": "AAAAAAGE7X3FE8+vexs="
 											},
 											"edgePosition": 1,
-											"text": "6 : new(ISBN, title, maxCheckoutLength, numberOfCopies)"
+											"text": "6 : new(ISBN, title, maxCheckoutLength)"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -17801,7 +17801,7 @@
 							"target": {
 								"$ref": "AAAAAAGE7X3FFM/5uew="
 							},
-							"arguments": "ISBN, title, authors, maxCheckoutLength, numberOfCopies"
+							"arguments": "ISBN, title, authors, maxCheckoutLength"
 						},
 						{
 							"_type": "UMLMessage",
@@ -17816,7 +17816,7 @@
 							"target": {
 								"$ref": "AAAAAAGE7X3FFM/6PLI="
 							},
-							"arguments": "ISBN, title, authors, maxCheckoutLength, numberOfCopies"
+							"arguments": "ISBN, title, authors, maxCheckoutLength"
 						},
 						{
 							"_type": "UMLMessage",
@@ -17831,7 +17831,7 @@
 							"target": {
 								"$ref": "AAAAAAGE7X3FFM/7OjA="
 							},
-							"arguments": "ISBN, title, authors, maxCheckoutLength, numberOfCopies"
+							"arguments": "ISBN, title, authors, maxCheckoutLength"
 						},
 						{
 							"_type": "UMLMessage",
@@ -17846,7 +17846,7 @@
 							"target": {
 								"$ref": "AAAAAAGE7X3FFM/8Q5s="
 							},
-							"arguments": "ISBN, title, maxCheckoutLength, numberOfCopies"
+							"arguments": "ISBN, title, maxCheckoutLength"
 						},
 						{
 							"_type": "UMLMessage",
@@ -18171,9 +18171,9 @@
 												"$ref": "AAAAAAGE7aaOyWY442s="
 											},
 											"font": "Arial;13;0",
-											"left": 30.55908203125,
+											"left": 32.72998046875,
 											"top": 5,
-											"width": 128.791015625,
+											"width": 144.09521484375,
 											"height": 13,
 											"text": "checkOutBookSequence"
 										},
@@ -18186,7 +18186,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 5,
-											"width": 12.55908203125,
+											"width": 14.72998046875,
 											"height": 13,
 											"text": "sd"
 										}

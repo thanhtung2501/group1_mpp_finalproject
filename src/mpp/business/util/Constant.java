@@ -17,6 +17,7 @@ public class Constant {
     public static final String CHECK_DUE_DATE = "Check due date";
     //add library member
     public static final String SUCCESS_ADD_MEMBER = "Member %s is added success!";
+    public static final String SUCCESS_UPDATE_MEMBER = "Member %s is updated success!";
     public static final String SUCCESS_DELETE_MEMBER = "Member %s is deleted success!";
     public static final String FAIL_ADD_MEMBER_BLANK = "%s field must be non empty!";
     public static final String WELCOME = "Welcome %s to the MPP Library!";
@@ -30,8 +31,10 @@ public class Constant {
     public static final String ZIP = "Zip";
     public static final String PHONE_NUMBER = "Telephone number";
 
+    public static final String EXISTING_MEMBER = "MemberId %s already exist. Do you want to replace?";
     public static final String DELETE_MESS = "Do you want to delete memberId %s?";
     public static final String DELETE_TITLE = "DELETE LIBRARY MEMBER";
+    public static final String ADD_UPDATE_LIBRARY_MEMBER_TITLE = "ADD/UPDATE LIBRARY MEMBER";
 
 
     //Duedate book

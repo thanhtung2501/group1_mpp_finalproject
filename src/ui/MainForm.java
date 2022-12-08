@@ -123,12 +123,14 @@ public class MainForm extends JFrame {
             model.addElement(exportCheckoutRecordItem);
         } else if (role == Role.ADMIN) {
             model.addElement(addMemberItem);
+            model.addElement(addAuthorItem);
             model.addElement(addBookItem);
             model.addElement(addBookCopyItem);
         } else {
             model.addElement(checkoutItem);
             model.addElement(checkDueDate);
             model.addElement(addMemberItem);
+            model.addElement(addAuthorItem);
             model.addElement(addBookItem);
             model.addElement(addBookCopyItem);
             model.addElement(exportCheckoutRecordItem);

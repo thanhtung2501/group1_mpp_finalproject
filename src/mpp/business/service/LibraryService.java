@@ -49,5 +49,5 @@ public interface LibraryService {
      * @param isbn
      * @return {@link Book}
      */
-    Book addBookCopy(String isbn);
+    BookCopy addBookCopy(String isbn);
 }

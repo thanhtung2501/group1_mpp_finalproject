@@ -1,11 +1,7 @@
 package mpp.business.controller;
 
 import mpp.business.exception.LoginException;
-import mpp.business.model.Address;
-import mpp.business.model.Author;
-import mpp.business.model.Book;
-import mpp.business.model.LibraryMember;
-import mpp.business.model.Role;
+import mpp.business.model.*;
 
 import java.util.List;
 import java.util.Map;
@@ -44,7 +40,7 @@ public interface ControllerInterface {
 
 	void deleteLibraryMember(String memberId);
 
-	Book addBookCopy(String isbn);
+	BookCopy addBookCopy(String isbn);
 
 	Author addAuthor(String firstName, String lastName, Address address, String phoneNumber, boolean credentials, String bio);
 	

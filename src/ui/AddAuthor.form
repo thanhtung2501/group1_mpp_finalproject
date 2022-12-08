@@ -13,7 +13,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="First Name"/>
+          <text value="First Name *"/>
         </properties>
       </component>
       <component id="3f207" class="javax.swing.JLabel">
@@ -31,7 +31,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <text value="Last Name"/>
+          <text value="Last Name *"/>
         </properties>
       </component>
       <component id="608f0" class="javax.swing.JLabel">
@@ -88,7 +88,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="68f46" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="68f46" class="javax.swing.JTextField" binding="txtLastName">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>

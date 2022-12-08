@@ -13,4 +13,49 @@ public class AddAuthor {
     private JCheckBox chbCredentials;
     private JTextArea txaBio;
     private JButton btnAdd;
+    private JPanel mainPanel;
+
+    public JTextField getTxtFirstName() {
+        return txtFirstName;
+    }
+
+    public JTextField getTextField1() {
+        return textField1;
+    }
+
+    public JTextField getTxtStreet() {
+        return txtStreet;
+    }
+
+    public JTextField getTxtCity() {
+        return txtCity;
+    }
+
+    public JTextField getTxtState() {
+        return txtState;
+    }
+
+    public JTextField getTxtZip() {
+        return txtZip;
+    }
+
+    public JTextField getTxtPhone() {
+        return txtPhone;
+    }
+
+    public JCheckBox getChbCredentials() {
+        return chbCredentials;
+    }
+
+    public JTextArea getTxaBio() {
+        return txaBio;
+    }
+
+    public JButton getBtnAdd() {
+        return btnAdd;
+    }
+
+    public JPanel getMainPanel() {
+        return mainPanel;
+    }
 }

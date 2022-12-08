@@ -26,7 +26,7 @@ public class LoginForm implements ActionListener, KeyListener, DocumentListener 
         pfPassword.addKeyListener(this);
         tfUsername.addKeyListener(this);
         btnLogin.addActionListener(e ->
-                mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword().toString())
+                mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword() != null ? pfPassword.getPassword().toString() : "")
         );
     }
 
@@ -74,7 +74,9 @@ public class LoginForm implements ActionListener, KeyListener, DocumentListener 
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+            mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword() != null ? pfPassword.getPassword().toString() : "");
+        }
     }
 
     @Override
@@ -84,16 +86,23 @@ public class LoginForm implements ActionListener, KeyListener, DocumentListener 
 
     @Override
     public void insertUpdate(DocumentEvent e) {
-
+        updateLoginButton();
     }
 
     @Override
     public void removeUpdate(DocumentEvent e) {
-
+        updateLoginButton();
     }
 
     @Override
     public void changedUpdate(DocumentEvent e) {
+        updateLoginButton();
+    }
 
+    private void updateLoginButton() {
+        btnLogin.setEnabled(false);
+        if (pfPassword.getPassword().length > 0 && !tfUsername.getText().trim().isEmpty()) {
+            btnLogin.setEnabled(true);
+        }
     }
 }

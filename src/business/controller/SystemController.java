@@ -15,9 +15,9 @@ import dataaccess.DataAccess;
 import dataaccess.DataAccessFacade;
 
 public class SystemController implements ControllerInterface {
-    private LoginService loginService = new LoginService();
-    private BookService bookService = new BookService();
-    private LibraryMemberService libraryMemberService = new LibraryMemberService();
+    private final LoginService loginService = new LoginService();
+    private final BookService bookService = new BookService();
+    private final LibraryMemberService libraryMemberService = new LibraryMemberService();
 
     private LibraryService libraryService = new LibraryServiceImpl();
 
@@ -43,25 +43,22 @@ public class SystemController implements ControllerInterface {
 
     @Override
     public LibraryMember checkoutBook(String libraryMemberID, String isbn) {
-//        return libraryService.checkoutBook(libraryMemberID, isbn);
-        return null;
+        return libraryService.checkoutBook(libraryMemberID, isbn);
     }
 
     @Override
     public LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn) {
-//        return libraryService.checkoutBooks(libraryMemberID, listIsbn);
-        return null;
+        return libraryService.checkoutBooks(libraryMemberID, listIsbn);
     }
 
     @Override
     public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies) {
-//        return libraryService.addBook(isbn, title, maxCheckoutLength, authors);
-        return null;
+        return libraryService.addBook(isbn, title, maxCheckoutLength, authors, numberOfCopies);
     }
 
     @Override
     public void addUpdateNewLibraryMember(LibraryMember libraryMember) {
-//        libraryService.addUpdateNewLibraryMember(libraryMember);
+        libraryService.addUpdateNewLibraryMember(libraryMember);
     }
 
     @Override

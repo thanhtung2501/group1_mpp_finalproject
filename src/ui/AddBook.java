@@ -9,4 +9,33 @@ public class AddBook {
     private JComboBox cmbMaxCheckoutLength;
     private JComboBox cmbNumberOfCopies;
     private JButton addButton;
+    private JPanel mainPanel;
+
+    public JTextField getTxtISBN() {
+        return txtISBN;
+    }
+
+    public JTextField getTxtTitle() {
+        return txtTitle;
+    }
+
+    public JComboBox getCmbAuthors() {
+        return cmbAuthors;
+    }
+
+    public JComboBox getCmbMaxCheckoutLength() {
+        return cmbMaxCheckoutLength;
+    }
+
+    public JComboBox getCmbNumberOfCopies() {
+        return cmbNumberOfCopies;
+    }
+
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JPanel getMainPanel() {
+        return mainPanel;
+    }
 }

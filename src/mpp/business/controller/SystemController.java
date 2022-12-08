@@ -34,7 +34,7 @@ public class SystemController implements ControllerInterface {
 
     @Override
     public Map<String, LibraryMember> getAllLibraryMembers() {
-        return null;
+        return libraryMemberService.findAllLibraryMembers();
     }
 
     @Override
@@ -80,8 +80,7 @@ public class SystemController implements ControllerInterface {
 
     @Override
     public Book addBookCopy(String isbn) {
-//        return libraryService.addBookCopy(isbn);
-        return null;
+        return libraryService.addBookCopy(isbn);
     }
 
     @Override

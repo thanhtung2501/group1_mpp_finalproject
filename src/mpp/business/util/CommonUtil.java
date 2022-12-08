@@ -1,6 +1,11 @@
 package mpp.business.util;
 
+import mpp.business.model.CheckoutRecordEntry;
+import mpp.business.model.LibraryMember;
+
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class CommonUtil {
@@ -16,5 +21,21 @@ public class CommonUtil {
         String regex = "^(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$";
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(isbn).matches();
+    }
+
+    public static java.util.List<String[]> parseCheckoutRecordEntryRows(LibraryMember libraryMember) {
+        java.util.List<CheckoutRecordEntry> checkoutRecordEntries = libraryMember.getCheckoutRecord().getCheckoutRecordEntries();
+        List<String[]> rows = new ArrayList<>();
+        checkoutRecordEntries.forEach(checkoutRecordEntry -> {
+            String[] row = new String[DEFAULT_COLUMN_HEADERS.length];
+            row[0] = libraryMember.getMemberId();
+            row[1] = checkoutRecordEntry.getIsbn();
+            row[2] = checkoutRecordEntry.getBookCopyId();
+            row[3] = checkoutRecordEntry.getCheckoutDate().toString();
+            row[4] = checkoutRecordEntry.getDueDate().toString();
+            rows.add(row);
+        });
+
+        return rows;
     }
 }

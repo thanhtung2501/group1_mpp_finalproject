@@ -5,7 +5,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import mpp.business.controller.ControllerInterface;
 import mpp.business.controller.SystemController;
 import mpp.business.model.LibraryMember;
-import mpp.librarysystem.Util;
+import mpp.business.util.CommonUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,7 +54,7 @@ public class ExportCheckoutRecordWindow implements MessageableWindow {
                     String memberID = selectedItem.substring(0, selectedItem.indexOf("-"));
                     LibraryMember libraryMember = systemController.getAllLibraryMembers().get(memberID);
                     if (libraryMember != null) {
-                      //  rows = Util.parseCheckoutRecordEntryRows(libraryMember); //TODO
+                        rows = CommonUtil.parseCheckoutRecordEntryRows(libraryMember);
                         rows.forEach(tableModel::addRow);
                         tblRecordEntry.updateUI();
                     }

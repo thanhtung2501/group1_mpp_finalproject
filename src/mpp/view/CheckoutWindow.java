@@ -8,7 +8,6 @@ import mpp.business.controller.SystemController;
 import mpp.business.exception.CheckoutBookException;
 import mpp.business.model.LibraryMember;
 import mpp.business.util.CommonUtil;
-import mpp.librarysystem.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,7 +55,7 @@ public class CheckoutWindow implements MessageableWindow {
                 LibraryMember libraryMember = systemController.checkoutBook(txtMemberID.getText().trim(), txtISBN.getText().trim());
                 displayInfo("Checking out '" + txtISBN.getText().trim() + "' was success");
                 clearTable(model);
-                List<String[]> rows = null;//Util.parseCheckoutRecordEntryRows(libraryMember); //TODO
+                List<String[]> rows = CommonUtil.parseCheckoutRecordEntryRows(libraryMember);
                 rows.forEach(model::addRow);
                 tblRecordEntry.updateUI();
             } catch (CheckoutBookException ex) {

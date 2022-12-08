@@ -38,6 +38,11 @@ public class SystemController implements ControllerInterface {
     }
 
     @Override
+    public void deleteLibraryMember(String memberId) {
+        libraryMemberService.deleteLibraryMember(memberId);
+    }
+
+    @Override
     public List<Author> getAuthors() {
         return authorService.findAllAuthors();
     }

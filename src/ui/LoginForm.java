@@ -26,7 +26,7 @@ public class LoginForm implements ActionListener, KeyListener, DocumentListener 
         pfPassword.addKeyListener(this);
         tfUsername.addKeyListener(this);
         btnLogin.addActionListener(e ->
-                mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword() != null ? pfPassword.getPassword().toString() : "")
+                mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword() != null ? String.valueOf(pfPassword.getPassword()) : "")
         );
     }
 
@@ -75,7 +75,7 @@ public class LoginForm implements ActionListener, KeyListener, DocumentListener 
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword() != null ? pfPassword.getPassword().toString() : "");
+            mainForm.validateUser(tfUsername.getText().trim(), pfPassword.getPassword() != null ? String.valueOf(pfPassword.getPassword()) : "");
         }
     }
 

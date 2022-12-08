@@ -6,6 +6,7 @@ import java.util.List;
 
 import business.model.*;
 import business.exception.LoginException;
+import business.service.AuthorService;
 import business.service.BookService;
 import business.service.LibraryMemberService;
 import business.service.LibraryService;
@@ -18,6 +19,7 @@ public class SystemController implements ControllerInterface {
     private final LoginService loginService = new LoginService();
     private final BookService bookService = new BookService();
     private final LibraryMemberService libraryMemberService = new LibraryMemberService();
+    private final AuthorService authorService = new AuthorService();
 
     private LibraryService libraryService = new LibraryServiceImpl();
 
@@ -65,5 +67,10 @@ public class SystemController implements ControllerInterface {
     public Book addBookCopy(String isbn) {
 //        return libraryService.addBookCopy(isbn);
         return null;
+    }
+
+    @Override
+    public Author addAuthor(String firstName, String lastName, Address address, String phoneNumber, boolean credential, String bio) {
+        return authorService.addAuthor(firstName, lastName, address, phoneNumber, credential, bio);
     }
 }

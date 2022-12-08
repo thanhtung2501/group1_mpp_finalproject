@@ -1,6 +1,7 @@
 package business.controller;
 
 import business.exception.LoginException;
+import business.model.Address;
 import business.model.Author;
 import business.model.Book;
 import business.model.LibraryMember;
@@ -34,5 +35,7 @@ public interface ControllerInterface {
 	void addUpdateNewLibraryMember(LibraryMember libraryMember);
 
 	Book addBookCopy(String isbn);
+
+	Author addAuthor(String firstName, String lastName, Address address, String phoneNumber, boolean credentials, String bio);
 	
 }

@@ -23,24 +23,23 @@ public class SystemController implements ControllerInterface {
 
     private LibraryService libraryService = new LibraryServiceImpl();
 
-    public Role login(String username, char[] password) throws LoginException {
+    public Role login(String username, String password) throws LoginException {
         return loginService.login(username, password);
     }
 
     @Override
     public Map<String, Book> getAllBooks() {
-        //TODO
-        return null;
+        return bookService.findAllBooks();
     }
 
     @Override
     public Map<String, LibraryMember> getAllLibraryMembers() {
-        return null;
+        return libraryMemberService.findAllLibraryMembers();
     }
 
     @Override
     public List<Author> getAuthors() {
-        return null;
+        return authorService.findAllAuthors();
     }
 
     @Override
@@ -81,8 +80,7 @@ public class SystemController implements ControllerInterface {
 
     @Override
     public Book addBookCopy(String isbn) {
-//        return libraryService.addBookCopy(isbn);
-        return null;
+        return libraryService.addBookCopy(isbn);
     }
 
     @Override

@@ -77,7 +77,7 @@ public class ExportCheckoutRecordWindow implements MessageableWindow {
         });
     }
 
-    void populateCboData() {
+    private void populateCboData() {
         Map<String, LibraryMember> libraryMemberMap = systemController.getAllLibraryMembers();
         List<String> data = new ArrayList<>();
         data.add("--Select--");

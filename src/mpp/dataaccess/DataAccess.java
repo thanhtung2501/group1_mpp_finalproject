@@ -1,6 +1,7 @@
 package mpp.dataaccess;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import mpp.business.model.Author;
@@ -17,4 +18,5 @@ public interface DataAccess {
 	void saveBooksMap(Map<String, Book> books);
 
     void saveAuthor(Author author);
+	List<Author> readAuthorList();
 }

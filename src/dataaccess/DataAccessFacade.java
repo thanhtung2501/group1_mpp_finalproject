@@ -3,10 +3,12 @@ import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import business.model.Author;
 import business.model.Book;
 import business.model.LibraryMember;
 import business.model.User;
@@ -15,7 +17,7 @@ import business.model.User;
 public class DataAccessFacade implements DataAccess {
 	
 	enum StorageType {
-		BOOKS, MEMBERS, USERS;
+		BOOKS, MEMBERS, USERS, AUTHORS;
 	}
 	public static final String OUTPUT_DIR = System.getProperty("user.dir")
 			+ File.separator + "src" + File.separator + "dataaccess" + File.separator + "storage";
@@ -62,6 +64,16 @@ public class DataAccessFacade implements DataAccess {
 		//Returns a Map with name/value pairs being
 		//   userId -> User
 		return (HashMap<String, User>)readFromStorage(StorageType.USERS);
+	}
+
+	public void saveAuthor(Author author){
+		List<Author> authors = readAuthorList();
+		authors.add(author);
+		saveToStorage(StorageType.AUTHORS, authors);
+	}
+
+	public List<Author> readAuthorList(){
+		return (List<Author>) readFromStorage(StorageType.AUTHORS);
 	}
 	
 	

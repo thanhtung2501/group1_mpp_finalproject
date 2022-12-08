@@ -3,6 +3,7 @@ package dataaccess;
 import java.util.HashMap;
 import java.util.Map;
 
+import business.model.Author;
 import business.model.Book;
 import business.model.LibraryMember;
 import business.model.User;
@@ -14,4 +15,6 @@ public interface DataAccess {
 	void saveNewMember(LibraryMember member);
 	void deleteMember(String memberId);
 	void saveBooksMap(Map<String, Book> books);
+
+    void saveAuthor(Author author);
 }

@@ -25,15 +25,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="ddbdf" layout-manager="FormLayout">
-            <rowspec value="center:d:noGrow"/>
-            <rowspec value="top:3dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <rowspec value="top:3dlu:noGrow"/>
-            <rowspec value="center:max(d;4px):noGrow"/>
-            <colspec value="fill:d:noGrow"/>
-            <colspec value="left:4dlu:noGrow"/>
-            <colspec value="fill:d:grow"/>
+          <grid id="ddbdf" layout-manager="GridBagLayout">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
               <gridbag top="5" left="10" bottom="0" right="10" weightx="1.0" weighty="1.0"/>
@@ -44,7 +36,7 @@
               <component id="c4c48" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
                   <text value="Username"/>
@@ -52,10 +44,10 @@
               </component>
               <component id="a6a03" class="javax.swing.JTextField" binding="tfUsername">
                 <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
-                  <forms defaultalign-horz="false"/>
+                  <gridbag weightx="1.0" weighty="0.0"/>
                 </constraints>
                 <properties>
                   <horizontalAlignment value="10"/>
@@ -63,8 +55,8 @@
               </component>
               <component id="3501b" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                  <forms/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="0.0" weighty="0.0"/>
                 </constraints>
                 <properties>
                   <text value="Password"/>
@@ -72,17 +64,17 @@
               </component>
               <component id="c259" class="javax.swing.JPasswordField" binding="pfPassword">
                 <constraints>
-                  <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="-1"/>
                   </grid>
-                  <forms defaultalign-horz="false"/>
+                  <gridbag weightx="1.0" weighty="0.0"/>
                 </constraints>
                 <properties/>
               </component>
               <component id="9ec7d" class="javax.swing.JButton" binding="btnLogin">
                 <constraints>
-                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-                  <forms/>
+                  <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <gridbag weightx="1.0" weighty="0.0"/>
                 </constraints>
                 <properties>
                   <text value="Login"/>

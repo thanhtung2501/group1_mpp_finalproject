@@ -19,7 +19,7 @@ public class BookService extends AbstractLibraryService {
     public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies) throws AddBookException {
         // Validate parameters
         if (!isValidIsbn(isbn)) {
-            throw new AddBookException("Invalid ISBN number. Valid ISBN number must have 10 or 13 number digits.");
+            throw new AddBookException("Invalid ISBN number. Valid ISBN number must follow this format 12-12345.");
         }
         for (Book book : bookMap.values()) {
             if (book.getIsbn().equals(isbn)) {
@@ -51,7 +51,7 @@ public class BookService extends AbstractLibraryService {
     public Book addBookCopy(String isbn) {
         // Validate parameters
         if (!isValidIsbn(isbn)) {
-            throw new AddBookException("Invalid ISBN number. Valid ISBN number must have 10 or 13 number digits.");
+            throw new AddBookException("Invalid ISBN number. Valid ISBN number must follow this format 12-12345.");
         }
         Book book = bookMap.get(isbn);
         if (book == null) {

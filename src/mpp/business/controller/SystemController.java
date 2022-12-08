@@ -23,7 +23,7 @@ public class SystemController implements ControllerInterface {
 
     private LibraryService libraryService = new LibraryServiceImpl();
 
-    public Role login(String username, String password) throws LoginException {
+    public Role login(String username, char[] password) throws LoginException {
         return loginService.login(username, password);
     }
 

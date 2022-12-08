@@ -19,7 +19,7 @@ public class DataAccessFacade implements DataAccess {
 		BOOKS, MEMBERS, USERS, AUTHORS;
 	}
 	public static final String OUTPUT_DIR = System.getProperty("user.dir")
-			+ File.separator + "src" + File.separator + "dataaccess" + File.separator + "storage";
+			+ File.separator + "src" + File.separator + "mpp" + File.separator + "dataaccess" + File.separator + "storage";
 	
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 	

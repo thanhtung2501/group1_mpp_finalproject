@@ -16,7 +16,7 @@ public interface ControllerInterface {
 
 	Map<String, LibraryMember> getAllLibraryMembers();
 
-	Role login(String id, String password) throws LoginException;
+	Role login(String id, char[] password) throws LoginException;
 	List<String> allMemberIds();
 	List<String> allBookIds();
 

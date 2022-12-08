@@ -218,7 +218,7 @@ public class LibAppWindow extends JFrame {
     public void authenUser(String username, char[] password) {
         if (username.length() > 0 && password.length > 0) {
             try {
-                this.role = systemController.login(username, "");//TODO
+                this.role = systemController.login(username, password);
                 currentUser = username;
                 statusBar.setText(String.format(Constant.WELCOME, currentUser));
                 removeComponents();

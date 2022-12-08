@@ -46,7 +46,7 @@ public class MainForm extends JFrame {
     public void validateUser(String username, String password) {
         if (username.length() > 0 && password.length() > 0) {
             try {
-                this.role = systemController.login(username, password);
+                this.role = systemController.login(username, password.toCharArray());
                 currentUser = username;
                 statusBar.setText(String.format(WELCOME, currentUser));
                 removeComponents();

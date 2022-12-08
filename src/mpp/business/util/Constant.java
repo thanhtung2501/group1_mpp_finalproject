@@ -30,6 +30,9 @@ public class Constant {
     public static final String ZIP = "Zip";
     public static final String PHONE_NUMBER = "Telephone number";
 
+    public static final String DELETE_MESS = "Do you want to delete memberId %s?";
+    public static final String DELETE_TITLE = "DELETE LIBRARY MEMBER";
+
 
     //Duedate book
     public static final String CANNOT_FIND_MEMBER_ID = "Cannot find member %s";

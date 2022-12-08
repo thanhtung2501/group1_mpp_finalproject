@@ -42,6 +42,8 @@ public interface ControllerInterface {
 
 	void addUpdateNewLibraryMember(LibraryMember libraryMember);
 
+	void deleteLibraryMember(String memberId);
+
 	Book addBookCopy(String isbn);
 
 	Author addAuthor(String firstName, String lastName, Address address, String phoneNumber, boolean credentials, String bio);

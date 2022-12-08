@@ -86,7 +86,23 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         deleteMemberButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              //TODO
+                TableModel tblModel = memberTable.getModel();
+                if (memberTable.getSelectedRow() < 0) {
+                    displayError("There is no members selected to delete!");
+                    return;
+                }
+
+                String getMemberId = tblModel.getValueAt(memberTable.getSelectedRow(), 0).toString().strip();
+                int opt = JOptionPane.showConfirmDialog(AddLibraryMemberWindow, String.format(Constant.DELETE_MESS, getMemberId), Constant.DELETE_TITLE, JOptionPane.YES_NO_OPTION);
+                if (opt == 0) {
+                    if (validateMemberId(getMemberId)) {
+                        systemController.deleteLibraryMember(getMemberId);
+                        clear();
+                        model.setTableValues(parseMemberToArray());
+                        memberTable.updateUI();
+                        printNotify(Constant.SUCCESS_DELETE_MEMBER, getMemberId, infoColor);
+                    }
+                }
             }
         });
 

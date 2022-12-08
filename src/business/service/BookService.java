@@ -15,7 +15,8 @@ import static business.util.CommonUtil.isValidIsbn;
 
 public class BookService extends AbstractLibraryService {
     private Map<String, Book> bookMap;
-    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) throws AddBookException {
+
+    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies) throws AddBookException {
         // Validate parameters
         if (!isValidIsbn(isbn)) {
             throw new AddBookException("Invalid ISBN number. Valid ISBN number must have 10 or 13 number digits.");
@@ -38,6 +39,10 @@ public class BookService extends AbstractLibraryService {
         // Create new book and save it
         Book book = new Book(isbn, title, maxCheckoutLength, authors);
         bookMap.put(isbn, book);
+
+        for (int i = 0; i < numberOfCopies; i++)
+            book.addCopy();
+
         saveBooks(bookMap);
 
         return book;
@@ -73,6 +78,7 @@ public class BookService extends AbstractLibraryService {
         //TODO
         return null;
     }
+
     public LibraryMember checkout(String libraryMemberID, String isbn) throws CheckoutBookException {
         Map<String, LibraryMember> libraryMemberMap = dataAccess.readMemberMap();
         LibraryMember libraryMember = Optional.ofNullable(libraryMemberMap.get(libraryMemberID))

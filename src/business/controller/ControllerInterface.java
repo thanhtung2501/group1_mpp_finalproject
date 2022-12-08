@@ -29,7 +29,7 @@ public interface ControllerInterface {
 	 */
 	LibraryMember checkoutBooks(String libraryMemberID, List<String> listIsbn);
 
-	Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors);
+	Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies);
 
 	void addUpdateNewLibraryMember(LibraryMember libraryMember);
 

@@ -35,10 +35,10 @@ public class LibAppWindow extends JFrame {
     JList<ListItem> linkList;
 
     ListItem checkoutItem = new ListItem(Constant.CHECK_OUT, true);
-    ListItem addMemberItem = new ListItem(Constant.ADD_MEMBER, false);
-    ListItem addBookCopyItem = new ListItem(Constant.ADD_BOOK_COPY, false);
+    ListItem addMemberItem = new ListItem(Constant.ADD_MEMBER, true);
+    ListItem addBookCopyItem = new ListItem(Constant.ADD_BOOK_COPY, true);
     ListItem checkDueDate = new ListItem(Constant.CHECK_DUE_DATE, true);
-    ListItem addBookItem = new ListItem(Constant.ADD_BOOK, false);
+    ListItem addBookItem = new ListItem(Constant.ADD_BOOK, true);
 
     ListItem exportCheckoutRecordItem = new ListItem(Constant.EXPORT_CHECKOUT_RECORD, false);
     ListItem logoutItem = new ListItem(Constant.LOG_OUT, true);

@@ -18,7 +18,7 @@ public class CommonUtil {
     public static final Color INFO_MESSAGE_COLOR = new Color(24, 98, 19);
 
     public static boolean isValidIsbn(String isbn) {
-        String regex = "^(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$";
+        String regex = "^[0-9]{2}+[- ][- 0-9X]{5}$";
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(isbn).matches();
     }

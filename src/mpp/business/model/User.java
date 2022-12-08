@@ -8,9 +8,9 @@ final public class User implements Serializable {
 
 	private String id;
 	
-	private char[] password;
+	private String password;
 	private Role role;
-	public User(String id, char[] pass, Role role) {
+	public User(String id, String pass, Role role) {
 		this.id = id;
 		this.password = pass;
 		this.role = role;
@@ -19,7 +19,7 @@ final public class User implements Serializable {
 	public String getId() {
 		return id;
 	}
-	public  char[] getPassword() {
+	public String getPassword() {
 		return password;
 	}
 	public Role getRole() {

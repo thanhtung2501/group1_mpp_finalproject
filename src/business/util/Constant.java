@@ -3,6 +3,13 @@ package business.util;
 public class Constant {
     private Constant() {}
 
+    public static final String CHECK_OUT = "Checkout";
+    public static final String ADD_MEMBER = "Add member";
+    public static final String ADD_AUTHOR = "Add author";
+    public static final String ADD_BOOK_COPY = "Add book copy";
+    public static final String ADD_BOOK = "Add book";
+    public static final String EXPORT_CHECKOUT_RECORD = "Export Checkout Record";
+    public static final String LOG_OUT = "Log out";
     public static final String LOG_OUT_MESS = "Do you want to log out?";
     public static final String LOG_OUT_TITLE = "LOG OUT";
     public static final String ERROR_PASSWORD_WRONG = "Password incorrect!";

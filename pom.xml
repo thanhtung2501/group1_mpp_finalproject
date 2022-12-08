@@ -71,7 +71,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>edu.miu.mpp.library.Application</mainClass>
+              <mainClass>mpp.MainApplication</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

@@ -50,7 +50,7 @@ public class SystemController implements ControllerInterface {
     }
 
     @Override
-    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) {
+    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies) {
 //        return libraryService.addBook(isbn, title, maxCheckoutLength, authors);
         return null;
     }

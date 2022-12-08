@@ -21,6 +21,7 @@ public class BookService extends AbstractLibraryService {
         if (!isValidIsbn(isbn)) {
             throw new AddBookException("Invalid ISBN number. Valid ISBN number must follow this format 12-12345.");
         }
+        bookMap = dataAccess.readBooksMap();
         for (Book book : bookMap.values()) {
             if (book.getIsbn().equals(isbn)) {
                 throw new AddBookException("A book with the ISBN existed.");

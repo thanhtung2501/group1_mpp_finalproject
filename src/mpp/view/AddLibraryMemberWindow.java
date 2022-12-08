@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static mpp.business.util.Constant.SUCCESS_UPDATE_MEMBER;
 import static mpp.view.LibAppWindow.statusBar;
 
 public class AddLibraryMemberWindow extends JFrame implements MessageableWindow {
@@ -75,9 +76,20 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
                         , new Address(street.getText().strip(), city.getText().strip(), state.getText().strip(), zip.getText().strip()));
                 Boolean isValidate = validateMember(libraryMember);
                 if (isValidate) {
-                    setValues(model, libraryMember);
-                    memberTable.updateUI();
-                    clear();
+                    String newMemberId = libraryMember.getMemberId();
+                    String oldMemberId = getLibraryMemberId(newMemberId);
+                    if (newMemberId.equals(oldMemberId)) {
+                        int opt = JOptionPane.showConfirmDialog(AddLibraryMemberWindow, String.format(Constant.EXISTING_MEMBER, newMemberId), Constant.ADD_UPDATE_LIBRARY_MEMBER_TITLE, JOptionPane.YES_NO_OPTION);
+                        if (opt == 0) {
+                            updateMember(model, libraryMember, false);
+                            memberTable.updateUI();
+                            clear();
+                        }
+                    } else {
+                        updateMember(model, libraryMember, true);
+                        memberTable.updateUI();
+                        clear();
+                    }
                 }
             }
         });
@@ -286,6 +298,11 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         return listResouse;
     }
 
+    private String getLibraryMemberId(String libraryMember) {
+        Map<String, LibraryMember> data = systemController.getAllLibraryMembers();
+        return data.get(libraryMember) != null ? data.get(libraryMember).getMemberId() : "";
+    }
+
     public void updateTable() {
         model = new CustomTableModel();
         model.setTableValues(parseMemberToArray());
@@ -314,10 +331,11 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         pack();
     }
 
-    private void setValues(CustomTableModel model, LibraryMember libraryMember) {
+    private void updateMember(CustomTableModel model, LibraryMember libraryMember, boolean isNew) {
         systemController.addUpdateNewLibraryMember(libraryMember);
         model.setTableValues(parseMemberToArray());
-        printNotify(Constant.SUCCESS_ADD_MEMBER, libraryMember.getMemberId(), errorColor);
+        String successAddUpdateMember = isNew ? Constant.SUCCESS_ADD_MEMBER : SUCCESS_UPDATE_MEMBER;
+        printNotify(successAddUpdateMember, libraryMember.getMemberId(), infoColor);
     }
 
     public void printNotify(String title, String memberId, Color color) {

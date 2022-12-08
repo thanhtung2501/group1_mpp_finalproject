@@ -6,6 +6,8 @@ import java.util.List;
 
 import business.model.*;
 import business.exception.LoginException;
+import business.service.BookService;
+import business.service.LibraryMemberService;
 import business.service.LibraryService;
 import business.service.LoginService;
 import business.service.impl.LibraryServiceImpl;
@@ -14,6 +16,8 @@ import dataaccess.DataAccessFacade;
 
 public class SystemController implements ControllerInterface {
     private LoginService loginService = new LoginService();
+    private BookService bookService = new BookService();
+    private LibraryMemberService libraryMemberService = new LibraryMemberService();
 
     private LibraryService libraryService = new LibraryServiceImpl();
 

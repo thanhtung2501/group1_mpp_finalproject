@@ -83,10 +83,14 @@ public class AddBookCopyWindow implements MessageableWindow {
             public void componentShown(ComponentEvent e) {
                 super.componentShown(e);
                 setWelcomeUser();
-                bookMap = systemController.getAllBooks();
+                reloadBooks();
                 fillBookTableData(bookMap);
             }
         });
+    }
+
+    private void reloadBooks() {
+        bookMap = systemController.getAllBooks();
     }
 
     private void registerEventListener() {
@@ -185,14 +189,17 @@ public class AddBookCopyWindow implements MessageableWindow {
         int selectedRow = bookTable.getSelectedRow();
         String selectedIsbn = (String) bookTable.getValueAt(selectedRow, 0);
         System.out.println(selectedIsbn);
-        Book book;
+        BookCopy bookCopy;
         try {
-            book = systemController.addBookCopy(selectedIsbn);
+            bookCopy = systemController.addBookCopy(selectedIsbn);
         } catch (AddBookCopyException ex) {
             displayError(ex.getMessage());
             return;
         }
+        reloadBooks();
         updateCopy(selectedIsbn);
+
+        Book book = bookCopy.getBook();
 
         DefaultTableModel bookModel = (DefaultTableModel) bookTable.getModel();
         bookModel.setValueAt(book.getCopies().length, selectedRow, 2);

@@ -2,6 +2,7 @@ package mpp.business.service.impl;
 
 import mpp.business.model.Author;
 import mpp.business.model.Book;
+import mpp.business.model.BookCopy;
 import mpp.business.model.LibraryMember;
 import mpp.business.service.AbstractLibraryService;
 import mpp.business.service.BookService;
@@ -38,7 +39,7 @@ public class LibraryServiceImpl extends AbstractLibraryService implements Librar
     }
 
     @Override
-    public Book addBookCopy(String isbn) {
+    public BookCopy addBookCopy(String isbn) {
         return bookService.addBookCopy(isbn);
     }
 }

@@ -49,7 +49,7 @@ public class BookService extends AbstractLibraryService {
         return book;
     }
 
-    public Book addBookCopy(String isbn) {
+    public BookCopy addBookCopy(String isbn) {
         // Validate parameters
         if (!isValidIsbn(isbn)) {
             throw new AddBookException("Invalid ISBN number. Valid ISBN number must follow this format 12-12345.");
@@ -64,7 +64,7 @@ public class BookService extends AbstractLibraryService {
         book.addCopy();
         saveBooks(bookMap);
 
-        return book;
+        return new BookCopy(book, book.getNumCopies() + 1, true);
     }
 
     public Map<String, Book> findAllBooks() {

@@ -84,7 +84,7 @@ public class SystemController implements ControllerInterface {
     }
 
     @Override
-    public Book addBookCopy(String isbn) {
+    public BookCopy addBookCopy(String isbn) {
         return libraryService.addBookCopy(isbn);
     }
 

@@ -7,11 +7,13 @@ import mpp.business.controller.SystemController;
 import mpp.business.exception.LoginException;
 import mpp.business.model.ListItem;
 import mpp.business.model.Role;
-import mpp.business.util.CommonUtil;
 import mpp.business.util.Constant;
 
 import javax.swing.*;
 import java.awt.*;
+
+import static mpp.business.util.CommonUtil.DARK_BLUE;
+import static mpp.business.util.CommonUtil.adjustLabelFont;
 
 public class LibAppWindow extends JFrame {
 
@@ -73,7 +75,6 @@ public class LibAppWindow extends JFrame {
         cards = new JPanel();
         cards.setLayout(new BorderLayout());
         LoginWindow loginWindow = new LoginWindow(this);
-        //loginWindow.setLibAppWindow(this);
         cards.add(loginWindow.getMainPane(), BorderLayout.CENTER);
         this.add(cards, BorderLayout.CENTER);
     }
@@ -116,7 +117,7 @@ public class LibAppWindow extends JFrame {
                     setText(nextItem.getItemName());
                     if (isSelected) {
                         setForeground(Color.WHITE);
-                        setBackground(CommonUtil.DARK_BLUE);
+                        setBackground(DARK_BLUE);
                     }
                 }
                 return c;
@@ -124,7 +125,7 @@ public class LibAppWindow extends JFrame {
         });
     }
 
-    public void createMainPanels() {
+    private void createMainPanels() {
 
         // Checkout Book Panel
         CheckoutWindow checkoutWindow = new CheckoutWindow();
@@ -159,8 +160,8 @@ public class LibAppWindow extends JFrame {
         cards.add(exportCheckoutRecordPanel, exportCheckoutRecordItem.getItemName());
     }
 
-    public void addComponents() {
-        CommonUtil.adjustLabelFont(statusBar, CommonUtil.DARK_BLUE, true);
+    private void addComponents() {
+        adjustLabelFont(statusBar, DARK_BLUE, true);
         setSize(1200, 600);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -169,10 +170,9 @@ public class LibAppWindow extends JFrame {
         CardLayout cl = (CardLayout) (cards.getLayout());
         linkList.addListSelectionListener(event -> {
             String value = linkList.getSelectedValue().getItemName();
-            if (value == Constant.LOG_OUT.toString()) {
+            if (Constant.LOG_OUT.equals(value)) {
                 handleLogout();
             } else {
-                boolean allowed = linkList.getSelectedValue().getHighlight();
                 cl.show(cards, value);
             }
         });

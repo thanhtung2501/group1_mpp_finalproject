@@ -151,7 +151,7 @@ public class AddBookWindow implements MessageableWindow {
         String isbn = isbnTxt.getText();
 
         if (!isValidIsbn(isbn)) {
-            displayError("Invalid ISBN number. Valid ISBN number must have 10 or 13 number digits.");
+            displayError("Invalid ISBN number. Valid ISBN number must follow the format 12-12345.");
             return false;
         }
         if (isBookExisted(isbn)) {

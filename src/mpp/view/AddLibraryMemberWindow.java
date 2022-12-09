@@ -181,6 +181,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(memberId, Constant.MEMBER_ID) && isNumber(memberId, Constant.MEMBER_ID)) {
             return true;
         }
+        printNotify("Member ID must be integer", memberId, errorColor);
         return false;
     }
 
@@ -188,6 +189,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(firstName, Constant.FIRST_NAME) && isWord(firstName, Constant.FIRST_NAME)) {
             return true;
         }
+        printNotify("First name must not be empty", firstName, errorColor);
         return false;
     }
 
@@ -195,6 +197,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(lastName, Constant.LASTNAME) && isWord(lastName, Constant.LASTNAME)) {
             return true;
         }
+        printNotify("Lats name must not be empty", lastName, errorColor);
         return false;
     }
 
@@ -202,6 +205,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(street, Constant.STREET)) {
             return true;
         }
+        printNotify("Street must not be empty", street, errorColor);
         return false;
     }
 
@@ -209,6 +213,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(state, Constant.STATE) && isWord(state, Constant.STATE)) {
             return true;
         }
+        printNotify("State must not be empty", state, errorColor);
         return false;
     }
 
@@ -216,6 +221,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(city, Constant.CITY) && isWord(city, Constant.CITY)) {
             return true;
         }
+        printNotify("City must not be empty", city, errorColor);
         return false;
     }
 
@@ -223,18 +229,20 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         if (!blankOrEmpty(zip, Constant.ZIP) && isNumber(zip, Constant.ZIP)) {
             return true;
         }
+        printNotify("Zip must not be empty and a number", zip, errorColor);
         return false;
     }
 
     private boolean validatePhoneNumber(String phoneNumber) {
-        if (!blankOrEmpty(phoneNumber, Constant.PHONE_NUMBER)) {
+        if (!blankOrEmpty(phoneNumber, Constant.PHONE_NUMBER) && isNumber(phoneNumber, Constant.PHONE_NUMBER)) {
             return true;
         }
+        printNotify("Phone number must not be empty and a number", phoneNumber, errorColor);
         return false;
     }
 
     private boolean blankOrEmpty(String check, String print) {
-        if (check.length() == 0 || check == null) {
+        if (check == null || check.length() == 0) {
             printNotify(Constant.FAIL_ADD_MEMBER_BLANK, print, errorColor);
             return true;
         }
@@ -282,7 +290,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         }
     }
 
-    public List<String[]> parseMemberToArray() {
+    private List<String[]> parseMemberToArray() {
         Map<String, LibraryMember> data = systemController.getAllLibraryMembers();
         List<String[]> listResouse = new ArrayList<>();
         if (data != null) {
@@ -303,7 +311,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         return data.get(libraryMember) != null ? data.get(libraryMember).getMemberId() : "";
     }
 
-    public void updateTable() {
+    private void updateTable() {
         model = new CustomTableModel();
         model.setTableValues(parseMemberToArray());
         memberTable = new JTable(model);
@@ -321,7 +329,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         memberScroll.getViewport().add(memberTable);
     }
 
-    public void initPanel() {
+    private void initPanel() {
         //set panel
         AddLibraryMemberWindow.add(middlePanel, BorderLayout.NORTH);
         AddLibraryMemberWindow.add(memberScroll, BorderLayout.CENTER);
@@ -338,7 +346,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         printNotify(successAddUpdateMember, libraryMember.getMemberId(), infoColor);
     }
 
-    public void printNotify(String title, String memberId, Color color) {
+    private void printNotify(String title, String memberId, Color color) {
         statusBar.setText(String.format(title, memberId));
         statusBar.setForeground(color);
     }

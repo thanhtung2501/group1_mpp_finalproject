@@ -25,7 +25,7 @@ public class BookService extends AbstractLibraryService {
         bookMap = dataAccess.readBooksMap();
         for (Book book : bookMap.values()) {
             if (book.getIsbn().equals(isbn)) {
-                throw new AddBookException("A book with the ISBN existed.");
+                throw new AddBookException("A book with the ISBN " + isbn + " already existed.");
             }
         }
         if (title == null || title.isEmpty()) {
@@ -93,11 +93,21 @@ public class BookService extends AbstractLibraryService {
 
         // Make this book copy unavailable
         availableBookCopy.changeAvailability();
+
+        LocalDate checkoutDate = LocalDate.now();
+        LocalDate dueDate = checkoutDate.plusDays(book.getMaxCheckoutLength());
+        double fines = 0;
+        if (dueDate.isAfter(checkoutDate.plusDays(book.getMaxCheckoutLength()))) {
+            fines = Constant.FINE_20;
+        }
+
         CheckoutRecordEntry checkoutRecordEntry = new CheckoutRecordEntry(
                 isbn,
                 String.valueOf(availableBookCopy.getCopyNum()),
-                LocalDate.now(),
-                LocalDate.now().plusDays(book.getMaxCheckoutLength()));
+                checkoutDate,
+                dueDate,
+                fines,
+                LocalDate.now().plusDays(book.getMaxCheckoutLength()).plusDays(Constant.FINE_PAID_INCREMENTAL));
 
         libraryMember.getCheckoutRecord().addCheckoutRecordEntry(checkoutRecordEntry);
 

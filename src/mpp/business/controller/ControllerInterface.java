@@ -36,7 +36,7 @@ public interface ControllerInterface {
 
 	Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors);
 
-	void addUpdateNewLibraryMember(LibraryMember libraryMember);
+	void addUpdateLibraryMember(LibraryMember libraryMember);
 
 	void deleteLibraryMember(String memberId);
 

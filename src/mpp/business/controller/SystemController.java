@@ -79,7 +79,7 @@ public class SystemController implements ControllerInterface {
     }
 
     @Override
-    public void addUpdateNewLibraryMember(LibraryMember libraryMember) {
+    public void addUpdateLibraryMember(LibraryMember libraryMember) {
         libraryService.addUpdateNewLibraryMember(libraryMember);
     }
 

@@ -10,7 +10,7 @@ public class LibraryMemberService extends AbstractLibraryService {
         return dataAccess.readMemberMap();
     }
 
-    public void addUpdateNewLibraryMember(LibraryMember libraryMember) {
+    public void addUpdateLibraryMember(LibraryMember libraryMember) {
         dataAccess.saveNewMember(libraryMember);
     }
 

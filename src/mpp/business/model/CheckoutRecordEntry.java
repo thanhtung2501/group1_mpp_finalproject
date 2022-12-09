@@ -11,11 +11,13 @@ public class CheckoutRecordEntry implements Serializable {
     private double fines;
     private LocalDate finesDatePaid;
 
-    public CheckoutRecordEntry(String isbn, String bookCopyId, LocalDate checkoutDate, LocalDate dueDate) {
+    public CheckoutRecordEntry(String isbn, String bookCopyId, LocalDate checkoutDate, LocalDate dueDate, Double fines, LocalDate finesDatePaid) {
         this.isbn = isbn;
         this.bookCopyId = bookCopyId;
         this.checkoutDate = checkoutDate;
         this.dueDate = dueDate;
+        this.fines = fines;
+        this.finesDatePaid = finesDatePaid;
     }
 
     public String getIsbn() {

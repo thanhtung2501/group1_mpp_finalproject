@@ -40,4 +40,8 @@ public class Constant {
     //Duedate book
     public static final String CANNOT_FIND_MEMBER_ID = "Cannot find member %s";
 
+    //fine
+    public static final Double FINE_20 = 20.0;
+    public static final Integer FINE_PAID_INCREMENTAL = 7;
+
 }

@@ -13,7 +13,7 @@ public class CommonUtil {
     private CommonUtil(){}
 
     public static final String[] DEFAULT_COLUMN_HEADERS
-            = {"Member ID", "ISBN", "Book Copy ID", "Checkout Date", "Due Date"};
+            = {"Member ID", "ISBN", "Book Copy ID", "Checkout Date", "Due Date", "Fine", "Fine Date Paid"};
     public static final Color DARK_BLUE = Color.BLUE.darker();
     public static final Color ERROR_MESSAGE_COLOR = Color.RED.darker(); //dark red
     public static final Color INFO_MESSAGE_COLOR = new Color(24, 98, 19);
@@ -34,6 +34,8 @@ public class CommonUtil {
             row[2] = checkoutRecordEntry.getBookCopyId();
             row[3] = checkoutRecordEntry.getCheckoutDate().toString();
             row[4] = checkoutRecordEntry.getDueDate().toString();
+            row[5] = String.valueOf(checkoutRecordEntry.getFines());
+            row[6] = checkoutRecordEntry.getFinesDatePaid().toString();
             rows.add(row);
         });
 

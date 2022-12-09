@@ -3,6 +3,7 @@ package mpp.business.service;
 import mpp.business.exception.AddBookException;
 import mpp.business.exception.CheckoutBookException;
 import mpp.business.model.*;
+import mpp.business.util.Constant;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -96,7 +97,9 @@ public class BookService extends AbstractLibraryService {
                 isbn,
                 String.valueOf(availableBookCopy.getCopyNum()),
                 LocalDate.now(),
-                LocalDate.now().plusDays(book.getMaxCheckoutLength()));
+                LocalDate.now().plusDays(book.getMaxCheckoutLength()),
+                Constant.FINE_20,
+                LocalDate.now().plusDays(book.getMaxCheckoutLength()).plusDays(Constant.FINE_PAID_INCREMENTAL));
 
         libraryMember.getCheckoutRecord().addCheckoutRecordEntry(checkoutRecordEntry);
 

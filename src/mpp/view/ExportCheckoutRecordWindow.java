@@ -35,7 +35,7 @@ public class ExportCheckoutRecordWindow implements MessageableWindow {
     private final DefaultTableModel tableModel;
 
     private final String[] DEFAULT_COLUMN_HEADERS
-            = {"Member ID", "ISBN", "Book Copy ID", "Checkout Date", "Due Date"};
+            = {"Member ID", "ISBN", "Book Copy ID", "Checkout Date", "Due Date", "Fine", "Fine Date Paid"};
     private ComboBoxModel model;
 
     private String selectedItem = "";
@@ -170,19 +170,21 @@ public class ExportCheckoutRecordWindow implements MessageableWindow {
     }
 
     private void printConsole(Vector<Vector> allRows, String libraryMember) {
-        LOG.info("---------------------------------------------------------------------------------------");
-        LOG.info(String.format("%10s %15s %15s %20s %20s", "MEMBER ID", "ISBN", "BOOK COPY ID", "CHECKOUT DATE", "DUE DATE"));
-        LOG.info("---------------------------------------------------------------------------------------");
+        LOG.info("-----------------------------------------------------------------------------------------------------------------------------------------------");
+        LOG.info(String.format("%10s %15s %15s %20s %20s %20s %20s", "MEMBER ID", "ISBN", "BOOK COPY ID", "CHECKOUT DATE", "DUE DATE", "FINE","FINE DATE PAID"));
+        LOG.info("-----------------------------------------------------------------------------------------------------------------------------------------------");
         for (int i = 0; i < allRows.size(); i++) {
             int colSize = allRows.get(i).size();
-            LOG.info(String.format("%10s %15s %15s %20s %20s",
+            LOG.info(String.format("%10s %15s %15s %20s %20s %20s %20s",
                     colSize > 0 ? allRows.get(i).get(0) : "",
                     colSize > 1 ? allRows.get(i).get(1) : "",
                     colSize > 2 ? allRows.get(i).get(2) : "",
                     colSize > 3 ? allRows.get(i).get(3) : "",
-                    colSize > 4 ? allRows.get(i).get(4) : ""));
+                    colSize > 4 ? allRows.get(i).get(4) : "",
+                    colSize > 5 ? allRows.get(i).get(5) : "",
+                    colSize > 6 ? allRows.get(i).get(6) : ""));
         }
-        LOG.info("---------------------------------------------------------------------------------------");
+        LOG.info("------------------------------------------------------------------------------------------------------------------------------------------------");
 
         displayInfo("Checkout record entries of '" + libraryMember + "' were printed out in the console!");
     }

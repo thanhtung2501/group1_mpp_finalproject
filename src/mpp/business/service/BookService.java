@@ -97,7 +97,7 @@ public class BookService extends AbstractLibraryService {
         LocalDate checkoutDate = LocalDate.now();
         LocalDate dueDate = checkoutDate.plusDays(book.getMaxCheckoutLength());
         double fines = 0;
-        if (dueDate.isAfter(checkoutDate.plusDays(book.getMaxCheckoutLength()))) {
+        if (LocalDate.now().isAfter(dueDate)) {
             fines = Constant.FINE_20;
         }
 

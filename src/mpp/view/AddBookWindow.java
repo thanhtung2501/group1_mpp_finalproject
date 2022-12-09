@@ -135,7 +135,7 @@ public class AddBookWindow implements MessageableWindow {
         List<Author> authors = authorList.getSelectedValuesList();
 
         try {
-            systemController.addBook(isbn, title, maxCheckoutLength, authors,0);
+            systemController.addBook(isbn, title, maxCheckoutLength, authors);
         } catch (AddBookException ex) {
             String msg = ex.getMessage();
             displayError(msg);

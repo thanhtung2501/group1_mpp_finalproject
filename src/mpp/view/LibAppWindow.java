@@ -8,10 +8,12 @@ import mpp.business.exception.LoginException;
 import mpp.business.model.ListItem;
 import mpp.business.model.Role;
 import mpp.business.util.Constant;
-import mpp.librarysystem.Util;
 
 import javax.swing.*;
 import java.awt.*;
+
+import static mpp.business.util.CommonUtil.DARK_BLUE;
+import static mpp.business.util.CommonUtil.adjustLabelFont;
 
 public class LibAppWindow extends JFrame {
 
@@ -115,7 +117,7 @@ public class LibAppWindow extends JFrame {
                     setText(nextItem.getItemName());
                     if (isSelected) {
                         setForeground(Color.WHITE);
-                        setBackground(Util.DARK_BLUE);
+                        setBackground(DARK_BLUE);
                     }
                 }
                 return c;
@@ -159,7 +161,7 @@ public class LibAppWindow extends JFrame {
     }
 
     private void addComponents() {
-        Util.adjustLabelFont(statusBar, Util.DARK_BLUE, true);
+        adjustLabelFont(statusBar, DARK_BLUE, true);
         setSize(1200, 600);
         setLocationRelativeTo(null);
         setVisible(true);

@@ -3,6 +3,7 @@ package mpp.business.util;
 import mpp.business.model.CheckoutRecordEntry;
 import mpp.business.model.LibraryMember;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,4 +39,19 @@ public class CommonUtil {
 
         return rows;
     }
+
+    public static void adjustLabelFont(JLabel label, Color color, boolean bigger) {
+        if (bigger) {
+            Font f = new Font(label.getFont().getName(),
+                    label.getFont().getStyle(), (label.getFont().getSize() + 2));
+            label.setFont(f);
+        } else {
+            Font f = new Font(label.getFont().getName(),
+                    label.getFont().getStyle(), (label.getFont().getSize() - 2));
+            label.setFont(f);
+        }
+        label.setForeground(color);
+    }
+
+
 }

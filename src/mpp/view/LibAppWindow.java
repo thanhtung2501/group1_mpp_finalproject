@@ -7,8 +7,8 @@ import mpp.business.controller.SystemController;
 import mpp.business.exception.LoginException;
 import mpp.business.model.ListItem;
 import mpp.business.model.Role;
+import mpp.business.util.CommonUtil;
 import mpp.business.util.Constant;
-import mpp.librarysystem.Util;
 
 import javax.swing.*;
 import java.awt.*;
@@ -116,7 +116,7 @@ public class LibAppWindow extends JFrame {
                     setText(nextItem.getItemName());
                     if (isSelected) {
                         setForeground(Color.WHITE);
-                        setBackground(Util.DARK_BLUE);
+                        setBackground(CommonUtil.DARK_BLUE);
                     }
                 }
                 return c;
@@ -160,7 +160,7 @@ public class LibAppWindow extends JFrame {
     }
 
     public void addComponents() {
-        Util.adjustLabelFont(statusBar, Util.DARK_BLUE, true);
+        CommonUtil.adjustLabelFont(statusBar, CommonUtil.DARK_BLUE, true);
         setSize(1200, 600);
         setLocationRelativeTo(null);
         setVisible(true);

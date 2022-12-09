@@ -5,7 +5,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import mpp.business.controller.SystemController;
 import mpp.business.model.*;
-import mpp.librarysystem.Util;
+import mpp.business.util.CommonUtil;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -66,7 +66,7 @@ public class DueDateBookCopyWindow implements MessageableWindow {
                 Map<String, LibraryMember> mapMembers = systemController.getAllLibraryMembers();
                 if (!mapMembers.containsKey(getMemberId)) {
                     statusBar.setText(String.format(CANNOT_FIND_MEMBER_ID, getMemberId));
-                    statusBar.setForeground(Util.ERROR_MESSAGE_COLOR);
+                    statusBar.setForeground(CommonUtil.ERROR_MESSAGE_COLOR);
                 } else {
                     LibraryMember member = mapMembers.get(getMemberId);
                     checkoutRecordEntryList = member.getCheckoutRecord().getCheckoutRecordEntries();

@@ -73,7 +73,6 @@ public class LibAppWindow extends JFrame {
         cards = new JPanel();
         cards.setLayout(new BorderLayout());
         LoginWindow loginWindow = new LoginWindow(this);
-        //loginWindow.setLibAppWindow(this);
         cards.add(loginWindow.getMainPane(), BorderLayout.CENTER);
         this.add(cards, BorderLayout.CENTER);
     }
@@ -124,7 +123,7 @@ public class LibAppWindow extends JFrame {
         });
     }
 
-    public void createMainPanels() {
+    private void createMainPanels() {
 
         // Checkout Book Panel
         CheckoutWindow checkoutWindow = new CheckoutWindow();
@@ -159,7 +158,7 @@ public class LibAppWindow extends JFrame {
         cards.add(exportCheckoutRecordPanel, exportCheckoutRecordItem.getItemName());
     }
 
-    public void addComponents() {
+    private void addComponents() {
         Util.adjustLabelFont(statusBar, Util.DARK_BLUE, true);
         setSize(1200, 600);
         setLocationRelativeTo(null);
@@ -169,10 +168,9 @@ public class LibAppWindow extends JFrame {
         CardLayout cl = (CardLayout) (cards.getLayout());
         linkList.addListSelectionListener(event -> {
             String value = linkList.getSelectedValue().getItemName();
-            if (value == Constant.LOG_OUT.toString()) {
+            if (Constant.LOG_OUT.equals(value)) {
                 handleLogout();
             } else {
-                boolean allowed = linkList.getSelectedValue().getHighlight();
                 cl.show(cards, value);
             }
         });

@@ -24,6 +24,12 @@ public class CommonUtil {
         return pattern.matcher(isbn).matches();
     }
 
+    public static boolean isValidZip(String zip) {
+        String regex = "^[0-9]{5}$";
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(zip).matches();
+    }
+
     public static java.util.List<String[]> parseCheckoutRecordEntryRows(LibraryMember libraryMember) {
         java.util.List<CheckoutRecordEntry> checkoutRecordEntries = libraryMember.getCheckoutRecord().getCheckoutRecordEntries();
         List<String[]> rows = new ArrayList<>();

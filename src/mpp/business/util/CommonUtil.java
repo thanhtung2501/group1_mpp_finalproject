@@ -35,7 +35,7 @@ public class CommonUtil {
             row[3] = checkoutRecordEntry.getCheckoutDate().toString();
             row[4] = checkoutRecordEntry.getDueDate().toString();
             row[5] = String.valueOf(checkoutRecordEntry.getFines());
-            row[6] = checkoutRecordEntry.getFinesDatePaid().toString();
+            row[6] = checkoutRecordEntry.getFinesDatePaid() != null ? checkoutRecordEntry.getFinesDatePaid().toString(): "";
             rows.add(row);
         });
 

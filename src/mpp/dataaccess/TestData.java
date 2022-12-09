@@ -1,5 +1,6 @@
 package mpp.dataaccess;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,6 +27,7 @@ public class TestData {
 		td.libraryMemberData();
 		td.userData();
 		td.authorData();
+
 		DataAccess da = new DataAccessFacade();
 		System.out.println(da.readBooksMap());
 		System.out.println(da.readUserMap());
@@ -52,7 +54,12 @@ public class TestData {
 	//create library members
 	public void libraryMemberData() {
 		LibraryMember libraryMember = new LibraryMember("1001", "Andy", "Rogers", "641-223-2211", addresses.get(4));
+		CheckoutRecordEntry checkoutRecordEntry = new CheckoutRecordEntry("23-11451","1", LocalDate.now().minusMonths(2),LocalDate.now().minusMonths(1),20.0, LocalDate.now());
+		CheckoutRecord checkoutRecord = new CheckoutRecord();
+		checkoutRecord.addCheckoutRecordEntry(checkoutRecordEntry);
+		libraryMember.setCheckoutRecord(checkoutRecord);
 		members.add(libraryMember);
+
 		libraryMember = new LibraryMember("1002", "Drew", "Stevens", "702-998-2414", addresses.get(5));
 		members.add(libraryMember);
 		
@@ -61,7 +68,10 @@ public class TestData {
 		
 		libraryMember = new LibraryMember("1004", "Ricardo", "Montalbahn", "641-472-2871", addresses.get(7));
 		members.add(libraryMember);
-		
+
+
+
+
 		DataAccessFacade.loadMemberMap(members);	
 	}
 	
@@ -111,6 +121,16 @@ public class TestData {
 			add(new User("tung", "111", Role.BOTH));
 			add(new User("tu", "111", Role.BOTH));
 			add(new User("dung", "111", Role.BOTH));
+		}
+	};
+
+
+
+	List<CheckoutRecordEntry> allCheckoutRecordEntry = new ArrayList<CheckoutRecordEntry>(){
+		{
+			add(new CheckoutRecordEntry("23-11451","1", LocalDate.now().minusMonths(2),LocalDate.now().minusMonths(1),20.0, LocalDate.now()));
+			add(new CheckoutRecordEntry("23-11451","2", LocalDate.now().minusMonths(2),LocalDate.now().minusMonths(1),20.0, LocalDate.now()));
+			add(new CheckoutRecordEntry("23-11451","3", LocalDate.now().minusMonths(2),LocalDate.now().minusMonths(1),20.0, LocalDate.now()));
 		}
 	};
 }

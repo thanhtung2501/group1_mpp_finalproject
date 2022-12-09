@@ -42,7 +42,7 @@ public interface LibraryService {
      * Add new member or update existing library member.
      * @param libraryMember
      */
-    void addUpdateNewLibraryMember(LibraryMember libraryMember);
+    void addUpdateLibraryMember(LibraryMember libraryMember);
 
     /**
      * Add a copy of an existing book to the library collection.

@@ -29,8 +29,8 @@ public class LibraryServiceImpl extends AbstractLibraryService implements Librar
     }
 
     @Override
-    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies) {
-        return bookService.addBook(isbn, title, maxCheckoutLength, authors, numberOfCopies);
+    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) {
+        return bookService.addBook(isbn, title, maxCheckoutLength, authors);
     }
 
     @Override

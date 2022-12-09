@@ -16,7 +16,7 @@ import static mpp.business.util.CommonUtil.isValidIsbn;
 public class BookService extends AbstractLibraryService {
     private Map<String, Book> bookMap;
 
-    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors, int numberOfCopies) throws AddBookException {
+    public Book addBook(String isbn, String title, int maxCheckoutLength, List<Author> authors) throws AddBookException {
         // Validate parameters
         if (!isValidIsbn(isbn)) {
             throw new AddBookException("Invalid ISBN number. Valid ISBN number must follow this format 12-12345.");
@@ -40,10 +40,6 @@ public class BookService extends AbstractLibraryService {
         // Create new book and save it
         Book book = new Book(isbn, title, maxCheckoutLength, authors);
         bookMap.put(isbn, book);
-
-        for (int i = 0; i < numberOfCopies; i++)
-            book.addCopy();
-
         saveBooks(bookMap);
 
         return book;

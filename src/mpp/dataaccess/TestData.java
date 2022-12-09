@@ -108,6 +108,9 @@ public class TestData {
 			add(new User("101", "xyz", Role.LIBRARIAN));
 			add(new User("102", "abc", Role.ADMIN));
 			add(new User("103", "111", Role.BOTH));
+			add(new User("tung", "111", Role.BOTH));
+			add(new User("tu", "111", Role.BOTH));
+			add(new User("dung", "111", Role.BOTH));
 		}
 	};
 }

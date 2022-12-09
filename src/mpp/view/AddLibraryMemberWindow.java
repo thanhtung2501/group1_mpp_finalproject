@@ -340,7 +340,7 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
     }
 
     private void updateMember(CustomTableModel model, LibraryMember libraryMember, boolean isNew) {
-        systemController.addUpdateNewLibraryMember(libraryMember);
+        systemController.addUpdateLibraryMember(libraryMember);
         model.setTableValues(parseMemberToArray());
         String successAddUpdateMember = isNew ? Constant.SUCCESS_ADD_MEMBER : SUCCESS_UPDATE_MEMBER;
         printNotify(successAddUpdateMember, libraryMember.getMemberId(), infoColor);

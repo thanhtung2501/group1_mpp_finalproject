@@ -35,7 +35,7 @@ public class LibraryServiceImpl extends AbstractLibraryService implements Librar
 
     @Override
     public void addUpdateNewLibraryMember(LibraryMember libraryMember) {
-        libraryMemberService.addUpdateNewLibraryMember(libraryMember);
+        libraryMemberService.addUpdateLibraryMember(libraryMember);
     }
 
     @Override

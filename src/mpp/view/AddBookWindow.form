@@ -53,7 +53,7 @@
         </constraints>
         <properties>
           <text value=""/>
-          <toolTipText value="ISBN: 10 or 13 number"/>
+          <toolTipText value="ISBN: 7 digits number with format xx-xxxxx"/>
         </properties>
       </component>
       <component id="2187e" class="javax.swing.JTextField" binding="titleTxt">

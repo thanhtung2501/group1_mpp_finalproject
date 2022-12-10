@@ -20,3 +20,8 @@
 ### Username/password: tu/111
 ### Username/password: dung/111
 
+## MemberID: 
+### 1001, 1002, 1003, 1004
+## ISBN:     
+### 23-11451, 28-12331, 99-22223, 48-56882
+

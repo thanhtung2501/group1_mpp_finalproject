@@ -226,10 +226,10 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
     }
 
     private boolean validateZip(String zip) {
-        if (!blankOrEmpty(zip, Constant.ZIP) && isNumber(zip, Constant.ZIP)) {
+        if (!blankOrEmpty(zip, Constant.ZIP) && CommonUtil.isValidZip(zip)) {
             return true;
         }
-        printNotify("Zip must not be empty and a number", zip, errorColor);
+        printNotify("Zip must not be empty and a number with 5 digits", zip, errorColor);
         return false;
     }
 

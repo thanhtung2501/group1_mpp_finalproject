@@ -7,7 +7,12 @@
 
 # How to run the application
 ## Download library-management.jar to your local folder
-## open command line, cd to your local folder. java -jar library-management.jar
+### Window OS: open command line, cd to your local folder. 
+#### java -jar library-management.jar
+### Mac OS: open command line, cd to your local folder. 
+#### sudo chmod +x library-management.jar
+#### java -jar library-management.jar
+
 ## LIBRARIAN
 ### Username/password: 101/xyz
 
@@ -24,3 +29,4 @@
 ### 1001, 1002, 1003, 1004
 ## ISBN:     
 ### 23-11451, 28-12331, 99-22223, 48-56882
+

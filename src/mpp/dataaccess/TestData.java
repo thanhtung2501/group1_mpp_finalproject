@@ -53,20 +53,20 @@ public class TestData {
 	
 	//create library members
 	public void libraryMemberData() {
-		LibraryMember libraryMember = new LibraryMember("1001", "Andy", "Rogers", "641-223-2211", addresses.get(4));
+		LibraryMember libraryMember = new LibraryMember("1001", "Andy", "Rogers", "6412232211", addresses.get(4));
 		CheckoutRecordEntry checkoutRecordEntry = new CheckoutRecordEntry("23-11451","1", LocalDate.now().minusMonths(2),LocalDate.now().minusMonths(1),20.0, LocalDate.now());
 		CheckoutRecord checkoutRecord = new CheckoutRecord();
 		checkoutRecord.addCheckoutRecordEntry(checkoutRecordEntry);
 		libraryMember.setCheckoutRecord(checkoutRecord);
 		members.add(libraryMember);
 
-		libraryMember = new LibraryMember("1002", "Drew", "Stevens", "702-998-2414", addresses.get(5));
+		libraryMember = new LibraryMember("1002", "Drew", "Stevens", "7029982414", addresses.get(5));
 		members.add(libraryMember);
 		
-		libraryMember = new LibraryMember("1003", "Sarah", "Eagleton", "451-234-8811", addresses.get(6));
+		libraryMember = new LibraryMember("1003", "Sarah", "Eagleton", "4512348811", addresses.get(6));
 		members.add(libraryMember);
 		
-		libraryMember = new LibraryMember("1004", "Ricardo", "Montalbahn", "641-472-2871", addresses.get(7));
+		libraryMember = new LibraryMember("1004", "Ricardo", "Montalbahn", "6414722871", addresses.get(7));
 		members.add(libraryMember);
 
 		DataAccessFacade.loadMemberMap(members);

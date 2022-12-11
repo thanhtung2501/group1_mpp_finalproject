@@ -5,13 +5,6 @@
 ### Dang Tu Nguyen
 ### Thanh Tung Le
 
-# How to run the application
-## Download library-management.jar to your local folder
-### Window OS: open command line, cd to your local folder. 
-#### java -jar library-management.jar
-### Mac OS: open command line, cd to your local folder. 
-#### sudo chmod +x library-management.jar
-#### java -jar library-management.jar
 
 ## LIBRARIAN
 ### Username/password: 101/xyz

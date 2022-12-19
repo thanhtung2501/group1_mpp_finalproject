@@ -59,31 +59,28 @@ public class DueDateBookCopyWindow implements MessageableWindow {
         alignColumn();
 
         registerEventListener();
-        searchButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String getMemberId = memberId.getText().strip();
-                Map<String, LibraryMember> mapMembers = systemController.getAllLibraryMembers();
-                if (!mapMembers.containsKey(getMemberId)) {
-                    statusBar.setText(String.format(CANNOT_FIND_MEMBER_ID, getMemberId));
-                    statusBar.setForeground(CommonUtil.ERROR_MESSAGE_COLOR);
-                } else {
-                    LibraryMember member = mapMembers.get(getMemberId);
-                    checkoutRecordEntryList = member.getCheckoutRecord().getCheckoutRecordEntries();
-                    List<String> ISBNs = new LinkedList<>();
-                    for (CheckoutRecordEntry tempt : checkoutRecordEntryList) {
-                        ISBNs.add(tempt.getIsbn());
-                    }
-                    Map<String, Book> allBooks = systemController.getAllBooks();
-                    if (ISBNs.size() == 0) {
-                        bookMap = new HashMap<>();
-                    } else {
-                        for (String key : allBooks.keySet()) {
-                            if (ISBNs.contains(key)) bookMap.put(key, allBooks.get(key));
-                        }
-                    }
-                    fillBookTableData(bookMap);
+        searchButton.addActionListener(e -> {
+            String getMemberId = memberId.getText().strip();
+            Map<String, LibraryMember> mapMembers = systemController.getAllLibraryMembers();
+            if (!mapMembers.containsKey(getMemberId)) {
+                statusBar.setText(String.format(CANNOT_FIND_MEMBER_ID, getMemberId));
+                statusBar.setForeground(CommonUtil.ERROR_MESSAGE_COLOR);
+            } else {
+                LibraryMember member = mapMembers.get(getMemberId);
+                checkoutRecordEntryList = member.getCheckoutRecord().getCheckoutRecordEntries();
+                List<String> ISBNs = new LinkedList<>();
+                for (CheckoutRecordEntry tempt : checkoutRecordEntryList) {
+                    ISBNs.add(tempt.getIsbn());
                 }
+                Map<String, Book> allBooks = systemController.getAllBooks();
+                if (ISBNs.size() == 0) {
+                    bookMap = new HashMap<>();
+                } else {
+                    for (String key : allBooks.keySet()) {
+                        if (ISBNs.contains(key)) bookMap.put(key, allBooks.get(key));
+                    }
+                }
+                fillBookTableData(bookMap);
             }
         });
         mainPanel.addComponentListener(new ComponentAdapter() {

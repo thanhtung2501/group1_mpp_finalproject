@@ -63,11 +63,8 @@ public class AddBookWindow implements MessageableWindow {
         alignColumn();
         getBooks();
         getAuthors();
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addBook();
-            }
+        addButton.addActionListener( (e) -> {
+            addBook();
         });
         mainPanel.addComponentListener(new ComponentAdapter() {
             @Override

@@ -68,52 +68,46 @@ public class AddLibraryMemberWindow extends JFrame implements MessageableWindow 
         initPanel();
 
         //add or update new meber
-        addMemberButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                LibraryMember libraryMember = new LibraryMember(memberId.getText().strip(), firstName.getText().strip()
-                        , lastName.getText().strip(), telephoneNumber.getText().strip()
-                        , new Address(street.getText().strip(), city.getText().strip(), state.getText().strip(), zip.getText().strip()));
-                Boolean isValidate = validateMember(libraryMember);
-                if (isValidate) {
-                    String newMemberId = libraryMember.getMemberId();
-                    String oldMemberId = getLibraryMemberId(newMemberId);
-                    if (newMemberId.equals(oldMemberId)) {
-                        int opt = JOptionPane.showConfirmDialog(AddLibraryMemberWindow, String.format(Constant.EXISTING_MEMBER, newMemberId), Constant.ADD_UPDATE_LIBRARY_MEMBER_TITLE, JOptionPane.YES_NO_OPTION);
-                        if (opt == 0) {
-                            updateMember(model, libraryMember, false);
-                            memberTable.updateUI();
-                            clear();
-                        }
-                    } else {
-                        updateMember(model, libraryMember, true);
+        addMemberButton.addActionListener(e -> {
+            LibraryMember libraryMember = new LibraryMember(memberId.getText().strip(), firstName.getText().strip()
+                    , lastName.getText().strip(), telephoneNumber.getText().strip()
+                    , new Address(street.getText().strip(), city.getText().strip(), state.getText().strip(), zip.getText().strip()));
+            Boolean isValidate = validateMember(libraryMember);
+            if (isValidate) {
+                String newMemberId = libraryMember.getMemberId();
+                String oldMemberId = getLibraryMemberId(newMemberId);
+                if (newMemberId.equals(oldMemberId)) {
+                    int opt = JOptionPane.showConfirmDialog(AddLibraryMemberWindow, String.format(Constant.EXISTING_MEMBER, newMemberId), Constant.ADD_UPDATE_LIBRARY_MEMBER_TITLE, JOptionPane.YES_NO_OPTION);
+                    if (opt == 0) {
+                        updateMember(model, libraryMember, false);
                         memberTable.updateUI();
                         clear();
                     }
+                } else {
+                    updateMember(model, libraryMember, true);
+                    memberTable.updateUI();
+                    clear();
                 }
             }
         });
 
         //delete member
-        deleteMemberButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                TableModel tblModel = memberTable.getModel();
-                if (memberTable.getSelectedRow() < 0) {
-                    displayError("There is no members selected to delete!");
-                    return;
-                }
+        deleteMemberButton.addActionListener(e -> {
+            TableModel tblModel = memberTable.getModel();
+            if (memberTable.getSelectedRow() < 0) {
+                displayError("There is no members selected to delete!");
+                return;
+            }
 
-                String getMemberId = tblModel.getValueAt(memberTable.getSelectedRow(), 0).toString().strip();
-                int opt = JOptionPane.showConfirmDialog(AddLibraryMemberWindow, String.format(Constant.DELETE_MESS, getMemberId), Constant.DELETE_TITLE, JOptionPane.YES_NO_OPTION);
-                if (opt == 0) {
-                    if (validateMemberId(getMemberId)) {
-                        systemController.deleteLibraryMember(getMemberId);
-                        clear();
-                        model.setTableValues(parseMemberToArray());
-                        memberTable.updateUI();
-                        printNotify(Constant.SUCCESS_DELETE_MEMBER, getMemberId, infoColor);
-                    }
+            String getMemberId = tblModel.getValueAt(memberTable.getSelectedRow(), 0).toString().strip();
+            int opt = JOptionPane.showConfirmDialog(AddLibraryMemberWindow, String.format(Constant.DELETE_MESS, getMemberId), Constant.DELETE_TITLE, JOptionPane.YES_NO_OPTION);
+            if (opt == 0) {
+                if (validateMemberId(getMemberId)) {
+                    systemController.deleteLibraryMember(getMemberId);
+                    clear();
+                    model.setTableValues(parseMemberToArray());
+                    memberTable.updateUI();
+                    printNotify(Constant.SUCCESS_DELETE_MEMBER, getMemberId, infoColor);
                 }
             }
         });
